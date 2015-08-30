@@ -1,0 +1,79 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 2.5 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \sortlist{nty}{nty}
+    \entry{dix2005shape}{book}{}
+      \name{author}{1}{}{%
+        {{hash=5d0c1a7af73a34a2f0c5d455512ff3f6}{Dix}{D\bibinitperiod}{Gregory}{G\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Bloomsbury Publishing}%
+      }
+      \strng{namehash}{5d0c1a7af73a34a2f0c5d455512ff3f6}
+      \strng{fullhash}{5d0c1a7af73a34a2f0c5d455512ff3f6}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{The shape of the liturgy}
+      \field{year}{2005}
+    \endentry
+    \entry{4610935}{book}{}
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Std 754-2008}
+      \field{month}{08}
+      \field{title}{IEEE Standard for Floating-Point Arithmetic}
+      \field{year}{2008}
+      \field{pages}{1\bibrangedash 70}
+      \range{pages}{70}
+      \verb{doi}
+      \verb 10.1109/IEEESTD.2008.4610935
+      \endverb
+      \keyw{IEEE standards;floating point arithmetic;programming;IEEE standard;arithmetic formats;computer programming;decimal floating-point arithmetic;754-2008;NaN;arithmetic;binary;computer;decimal;exponent;floating-point;format;interchange;number;rounding;significand;subnormal}
+    \endentry
+    \entry{rfc4627}{report}{}
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{07}
+      \field{number}{4627}
+      \field{title}{{The application/json Media Type for JavaScript Object Notation (JSON)}}
+      \field{type}{{RFC}}
+      \field{year}{2006}
+      \field{pages}{1\bibrangedash 10}
+      \range{pages}{10}
+      \verb{url}
+      \verb http://www.ietf.org/rfc/rfc4627.txt
+      \endverb
+    \endentry
+  \endsortlist
+\endrefsection
+\endinput
+
