@@ -6,6 +6,10 @@
 \BOOKMARK [1][]{section.2.2}{s28oish0s}{chapter.2}% 6
 \BOOKMARK [0][]{chapter.3}{Arhitectura solutiei}{}% 7
 \BOOKMARK [1][]{section.3.1}{Prezentare generala}{chapter.3}% 8
-\BOOKMARK [1][]{section.3.2}{Punctul de date}{chapter.3}% 9
-\BOOKMARK [1][]{section.3.3}{Canalul de date}{chapter.3}% 10
-\BOOKMARK [2][]{subsection.3.3.1}{Primirea datelor}{section.3.3}% 11
+\BOOKMARK [2][]{subsection.3.1.1}{Baza de date}{section.3.1}% 9
+\BOOKMARK [2][]{subsection.3.1.2}{Aplicatia Java}{section.3.1}% 10
+\BOOKMARK [1][]{section.3.2}{Entitati}{chapter.3}% 11
+\BOOKMARK [2][]{subsection.3.2.1}{Punctul de date}{section.3.2}% 12
+\BOOKMARK [2][]{subsection.3.2.2}{Canalul de date}{section.3.2}% 13
+\BOOKMARK [2][]{subsection.3.2.3}{Blocul de intrare}{section.3.2}% 14
+\BOOKMARK [2][]{subsection.3.2.4}{Primirea datelor}{section.3.2}% 15

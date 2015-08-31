@@ -18,8 +18,16 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.1}Prezentare general\IeC {\u a}}{5}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Punctul de date}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.1.1}Baza de date}{7}{subsection.3.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Canalul de date}{7}{section.3.3}
+\contentsline {subsection}{\numberline {3.1.2}Aplica\IeC {\c t}ia Java}{8}{subsection.3.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Primirea datelor}{7}{subsection.3.3.1}
+\contentsline {section}{\numberline {3.2}Entit\IeC {\u a}\IeC {\c t}i}{8}{section.3.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.1}Punctul de date}{8}{subsection.3.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.2}Canalul de date}{10}{subsection.3.2.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.3}Blocul de intrare}{10}{subsection.3.2.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {3.2.4}Primirea datelor}{10}{subsection.3.2.4}

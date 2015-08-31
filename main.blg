@@ -1,14 +1,14 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'main.blg'
-[54] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[54] Biber.pm:333> INFO - Reading 'main.bcf'
-[285] Biber.pm:645> INFO - Found 3 citekeys in bib section 0
-[306] Biber.pm:2977> INFO - Processing section 0
-[327] Biber.pm:3115> INFO - Looking for bibtex format file 'chapters/references.bib' for section 0
-[335] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[340] bibtex.pm:895> INFO - Found BibTeX data source 'chapters/references.bib'
-[395] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[395] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'variable = shifted' with 'variable = non-ignorable'
-[395] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ro-RO'
-[400] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[411] bbl.pm:596> INFO - Output to main.bbl
+[55] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[55] Biber.pm:333> INFO - Reading 'main.bcf'
+[296] Biber.pm:645> INFO - Found 4 citekeys in bib section 0
+[317] Biber.pm:2977> INFO - Processing section 0
+[338] Biber.pm:3115> INFO - Looking for bibtex format file 'chapters/references.bib' for section 0
+[349] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[354] bibtex.pm:895> INFO - Found BibTeX data source 'chapters/references.bib'
+[418] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'variable = shifted' with 'variable = non-ignorable'
+[418] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[419] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ro-RO'
+[425] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[438] bbl.pm:596> INFO - Output to main.bbl
