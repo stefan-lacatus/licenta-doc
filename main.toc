@@ -1,33 +1,52 @@
+\select@language {romanian}
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
 \select@language {romanian}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}ALkjhlkjhd}{1}{chapter.1}
+\contentsline {chapter}{\numberline {1}Introducere}{1}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Da da da da}{3}{chapter.2}
+\contentsline {chapter}{\numberline {2}Arhitectura solu\IeC {\c t}iei}{2}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}kjashdjksa}{3}{section.2.1}
+\contentsline {section}{\numberline {2.1}Prezentare general\IeC {\u a}}{2}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}hoo hoo hoo}{3}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.1}Baza de date}{4}{subsection.2.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}haa haa haa}{3}{subsection.2.1.2}
+\contentsline {subsection}{\numberline {2.1.2}Aplica\IeC {\c t}ia Java}{5}{subsection.2.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}s28oish0s}{3}{section.2.2}
+\contentsline {section}{\numberline {2.2}Entit\IeC {\u a}\IeC {\c t}i}{5}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Arhitectura solu\IeC {\c t}iei}{5}{chapter.3}
+\contentsline {subsection}{\numberline {2.2.1}Punctul de date}{5}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Prezentare general\IeC {\u a}}{5}{section.3.1}
+\contentsline {subsection}{\numberline {2.2.2}Canalul de date}{7}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.1}Baza de date}{7}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {2.2.3}Blocul de intrare}{7}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.2}Aplica\IeC {\c t}ia Java}{8}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {2.2.4}Blocul de procesare}{9}{subsection.2.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Entit\IeC {\u a}\IeC {\c t}i}{8}{section.3.2}
+\contentsline {subsection}{\numberline {2.2.5}Diagrama func\IeC {\c t}ie bloc(FBD)}{10}{subsection.2.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Punctul de date}{8}{subsection.3.2.1}
+\contentsline {section}{\numberline {2.3}Primirea datelor}{11}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Canalul de date}{10}{subsection.3.2.2}
+\contentsline {section}{\numberline {2.4}Executarea unei diagrame}{14}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.3}Blocul de intrare}{10}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {2.4.1}Ordinea execu\IeC {\c t}iei blocurilor}{14}{subsection.2.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.4}Primirea datelor}{10}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {2.4.2}Generarea rezultatului}{17}{subsection.2.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {3}Interfa\IeC {\c t}a aplica\IeC {\c t}iei}{18}{chapter.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {4}Implementarea Alegria}{19}{chapter.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.1}Aplica\IeC {\c t}ia Web}{19}{section.4.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.1}Securitate}{20}{subsection.4.1.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.2}Management}{21}{subsection.4.1.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {4.1.2.1}Managementul blocurilor de intrare}{22}{subsubsection.4.1.2.1}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}Baza de date}{22}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Studiu de caz: Smart Home}{23}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Concluzii}{24}{chapter.6}

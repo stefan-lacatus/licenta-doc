@@ -19,21 +19,41 @@
 
 \refsection{0}
   \sortlist{nty}{nty}
-    \entry{dix2005shape}{book}{}
-      \name{author}{1}{}{%
-        {{hash=5d0c1a7af73a34a2f0c5d455512ff3f6}{Dix}{D\bibinitperiod}{Gregory}{G\bibinitperiod}{}{}{}{}}%
-      }
-      \list{publisher}{1}{%
-        {Bloomsbury Publishing}%
-      }
-      \strng{namehash}{5d0c1a7af73a34a2f0c5d455512ff3f6}
-      \strng{fullhash}{5d0c1a7af73a34a2f0c5d455512ff3f6}
+    \entry{toposort}{online}{}
       \field{sortinit}{D}
       \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
-      \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{The shape of the liturgy}
-      \field{year}{2005}
+      \field{title}{DAGs and Topological Ordering}
+      \field{urlday}{20}
+      \field{urlmonth}{08}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://courses.cs.washington.edu/courses/cse326/03wi/lectures/RaoLect20.pdf
+      \endverb
+    \endentry
+    \entry{functionBlocks}{online}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labeltitlesource}{title}
+      \field{title}{Function Blocks}
+      \field{urlday}{20}
+      \field{urlmonth}{08}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.functionblocks.org/index.html
+      \endverb
+    \endentry
+    \entry{GEFANUC}{online}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labeltitlesource}{title}
+      \field{title}{GE FANUC Function Block Diagram Lab}
+      \field{urlday}{20}
+      \field{urlmonth}{08}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://geplc.com/downloads/Labs/GFS-384%20M03%20Function%20Block%20Diagram.pdf
+      \endverb
     \endentry
     \entry{4610935}{book}{}
       \field{sortinit}{I}
@@ -49,6 +69,143 @@
       \verb 10.1109/IEEESTD.2008.4610935
       \endverb
       \keyw{IEEE standards;floating point arithmetic;programming;IEEE standard;arithmetic formats;computer programming;decimal floating-point arithmetic;754-2008;NaN;arithmetic;binary;computer;decimal;exponent;floating-point;format;interchange;number;rounding;significand;subnormal}
+    \endentry
+    \entry{IEC61499}{report}{}
+      \list{institution}{1}{%
+        {TC 65/SC 65B - Measurement and control devices}%
+      }
+      \list{publisher}{1}{%
+        {TC 65/SC 65B}%
+      }
+      \field{sortinit}{I}
+      \field{sortinithash}{25e99d37ba90f7c4fb20baf4e310faf3}
+      \field{labeltitlesource}{title}
+      \field{month}{01}
+      \field{number}{61499}
+      \field{title}{{Industrial Use Cases of Distributed Intelligent Automation}}
+      \field{type}{{IEC}}
+      \field{year}{2011}
+      \verb{url}
+      \verb http://www.vyatkin.org/publ/IES_Mag_1499.pdf
+      \endverb
+    \endentry
+    \entry{topoKahn}{book}{}
+      \name{author}{1}{}{%
+        {{hash=74b790f910a1ca9860860144c07e1c1d}{Kahn}{K\bibinitperiod}{A.\bibnamedelimi B.}{A\bibinitperiod\bibinitdelim B\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{74b790f910a1ca9860860144c07e1c1d}
+      \strng{fullhash}{74b790f910a1ca9860860144c07e1c1d}
+      \field{sortinit}{K}
+      \field{sortinithash}{a7d5b3aec5a0890aae7baf85a209abfc}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Commun. ACM}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{Topological Sorting of Large Networks}
+      \field{volume}{5}
+      \field{year}{1962}
+      \field{pages}{558\bibrangedash 562}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1145/368996.369025
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/368996.369025
+      \endverb
+    \endentry
+    \entry{Logix5000}{online}{}
+      \field{sortinit}{L}
+      \field{sortinithash}{872351f18d0f736066eda0bf18bfa4f7}
+      \field{labeltitlesource}{title}
+      \field{title}{Logix5000 Controllers Function Block Diagram Programming Manual}
+      \field{urlday}{20}
+      \field{urlmonth}{08}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm009_-en-p.pdf
+      \endverb
+    \endentry
+    \entry{toposortArticle}{book}{}
+      \name{author}{2}{}{%
+        {{hash=e922c95258af7f4fa6570532feb90d74}{Pearce}{P\bibinitperiod}{David\bibnamedelima J.}{D\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+        {{hash=15687b21d7cba18565da42ea2ac2b16f}{Kelly}{K\bibinitperiod}{Paul\bibnamedelimb H.\bibnamedelimi J.}{P\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
+      }
+      \list{location}{1}{%
+        {New York, NY, USA}%
+      }
+      \list{publisher}{1}{%
+        {ACM}%
+      }
+      \strng{namehash}{0817f4797100a28003769b84d87747e5}
+      \strng{fullhash}{0817f4797100a28003769b84d87747e5}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{1084-6654}
+      \field{journaltitle}{J. Exp. Algorithmics}
+      \field{month}{02}
+      \field{title}{A Dynamic Topological Sort Algorithm for Directed Acyclic Graphs}
+      \field{volume}{11}
+      \field{year}{2007}
+      \verb{doi}
+      \verb 10.1145/1187436.1210590
+      \endverb
+      \verb{url}
+      \verb http://doi.acm.org/10.1145/1187436.1210590
+      \endverb
+      \keyw{Dynamic graph algorithms,topological sort}
+    \endentry
+    \entry{IEC61131-3}{report}{}
+      \list{institution}{1}{%
+        {TC 65/SC 65B - Measurement and control devices}%
+      }
+      \list{publisher}{1}{%
+        {TC 65/SC 65B}%
+      }
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labeltitlesource}{title}
+      \field{isbn}{3-540-67752-6}
+      \field{month}{07}
+      \field{title}{{Programmable controllers - Part 3: Programming languages}}
+      \field{type}{{IEC}}
+      \field{year}{2013}
+      \verb{url}
+      \verb http://www.dee.ufrj.br/controle_automatico/cursos/IEC61131-3_Programming_Industrial_Automation_Systems.pdf
+      \endverb
+    \endentry
+    \entry{SpringBoot}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{title}{Spring Boot}
+      \field{urlday}{02}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/
+      \endverb
+    \endentry
+    \entry{springUseCase}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{title}{Spring Frameowrk Case Studies}
+      \field{urlday}{02}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://pivotal.io/resources/1/case-studies
+      \endverb
     \endentry
     \entry{rfc4627}{report}{}
       \list{institution}{1}{%
@@ -83,6 +240,18 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://opentsdb.net/index.html
+      \endverb
+    \endentry
+    \entry{TM241}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{title}{TM241 Programming Manual}
+      \field{urlday}{20}
+      \field{urlmonth}{08}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.kongzhi.net/files/download.php?id=8362
       \endverb
     \endentry
   \endsortlist

@@ -2237,10 +2237,22 @@
     <bcf:datasource type="file" datatype="bibtex">chapters/references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">dix2005shape</bcf:citekey>
-    <bcf:citekey order="2">openTSDB</bcf:citekey>
-    <bcf:citekey order="3">4610935</bcf:citekey>
-    <bcf:citekey order="4">rfc4627</bcf:citekey>
+    <bcf:citekey order="1">openTSDB</bcf:citekey>
+    <bcf:citekey order="2">4610935</bcf:citekey>
+    <bcf:citekey order="3">rfc4627</bcf:citekey>
+    <bcf:citekey order="4">functionBlocks</bcf:citekey>
+    <bcf:citekey order="5">IEC61131-3</bcf:citekey>
+    <bcf:citekey order="6">IEC61131-3</bcf:citekey>
+    <bcf:citekey order="7">IEC61499</bcf:citekey>
+    <bcf:citekey order="8">IEC61131-3</bcf:citekey>
+    <bcf:citekey order="9">TM241</bcf:citekey>
+    <bcf:citekey order="10">Logix5000</bcf:citekey>
+    <bcf:citekey order="11">GEFANUC</bcf:citekey>
+    <bcf:citekey order="12">toposort</bcf:citekey>
+    <bcf:citekey order="13">toposortArticle</bcf:citekey>
+    <bcf:citekey order="14">topoKahn</bcf:citekey>
+    <bcf:citekey order="15">SpringBoot</bcf:citekey>
+    <bcf:citekey order="16">springUseCase</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>

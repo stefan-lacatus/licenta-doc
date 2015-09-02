@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt, oneside, titlepage]{book}
 \usepackage[romanian]{babel} % choose the language
 \usepackage[utf8]{inputenc} % äöå
 \usepackage[T1]{fontenc}
@@ -20,9 +20,21 @@
 \usepackage[hidelinks=true,hyperindex=false,bookmarksopen=true]{hyperref}
 \usepackage[cmex10]{amsmath}
 \usepackage[noabbrev]{cleveref}
-\usepackage{rotating}
-
+\usepackage{pdflscape}
+\usepackage{float}
+\selectlanguage{romanian}
+\usepackage{amsthm}
+\usepackage{caption}
+\usepackage{listings}
+\newtheorem{definition}{Definiţie}
+\newcommand{\code}[1]{\texttt{#1}}
 \Crefname{figure}{Figura}{Figuri}
+
+
+\usepackage[linesnumbered,ruled,vlined]{algorithm2e}
+\crefname{algocfline}{alg.}{algs.}
+\Crefname{algocfline}{Algoritmul}{Algoritmi}
+\SetAlgorithmName{Algoritmul}{algoritm}{Lista algoritmilor}
 \begin{document}
 
 \pagestyle{empty}    
@@ -32,26 +44,22 @@
 %------ Cover page stuff 
 
 \begin{titlepage}
-\vspace*{144pt}
+\thispagestyle{empty}
+
+\mbox{}\\[6pc]
 \begin{center}
-\Huge\bf Sistem de achiziţie, procesare si distribuite a datelor %------ NAME OF THE THESIS HERE!!!
+	\Huge{Sistem de achiziţie, procesare si distribuite a datelor}\\[2pc]
+	
+	\Large{Petrişor-Ştefan Lăcătuş}\\[1pc]
+	\large{Septembrie 2015}\\[2pc]
+	
+	Automatică şi Ingineria Sistemelor\\
+Facultatea de Automatica si Calculatoare
 \end{center}
-\enlargethispage{3cm}
 \vfill
 
-\hfill
-\begin{tabular}[t]{l@{}}%{\raggedleft%
-Petrişor-Ştefan Lăcătuş\\ % YOUR NAME AND STUDENT ID!
-Automatică şi Ingineria Sistemelor\\ % BAC/MASTER THESIS AND MAIN SUBJECT
-Profesor Coordonator: Andreea Udrea\\ % NAME OF YOUR SUPERVISOR
-Facultatea de Automatica si Calculatoare\\ % FACULTY
-2015\\ % YEAR
-\\
-\\
-\\
-\\
-\end{tabular}
-%}%
+\noindent Coordonator: Ş.L. Andreea Udrea
+
 \end{titlepage}
 
 %------ end of cover page stuff
@@ -66,11 +74,17 @@ Facultatea de Automatica si Calculatoare\\ % FACULTY
 
 % Example of structure
 
-\input{chapters/example1} 
+\input{chapters/intoducere}
 
-\input{chapters/example2} 
+\input{chapters/arhitectura} 
 
-\input{chapters/example3} 
+\input{chapters/interfata} 
+
+\input{chapters/implementarea} 
+
+\input{chapters/studiuCaz}
+
+\input{chapters/concluzie}  
 
 \printbibliography[title={Bibliografie}] % Change the title in the parenthes within the braces if you want
 
