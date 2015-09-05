@@ -37,16 +37,34 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {4}Implementarea Alegria}{19}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Aplica\IeC {\c t}ia Web}{19}{section.4.1}
+\contentsline {section}{\numberline {4.1}Interfa\IeC {\c t}a Web}{19}{section.4.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.1}Securitate}{20}{subsection.4.1.1}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.1.2}Management}{21}{subsection.4.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.1.2.1}Managementul blocurilor de intrare}{22}{subsubsection.4.1.2.1}
+\contentsline {subsubsection}{\numberline {4.1.2.1}Managementul blocurilor de intrare}{23}{subsubsection.4.1.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Baza de date}{22}{section.4.2}
+\contentsline {subsubsection}{\numberline {4.1.2.2}Managementul blocurilor de procesare}{23}{subsubsection.4.1.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Studiu de caz: Smart Home}{23}{chapter.5}
+\contentsline {subsubsection}{\numberline {4.1.2.3}Managementul diagramelor}{24}{subsubsection.4.1.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Concluzii}{24}{chapter.6}
+\contentsline {subsubsection}{\numberline {4.1.2.4}Administrare tag-uri}{25}{subsubsection.4.1.2.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {4.1.3}Monitorizare}{27}{subsection.4.1.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.2}API-ul aplica\IeC {\c t}iei}{28}{section.4.2}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.3}Executarea unui bloc de procesare}{29}{section.4.3}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.4}Executarea unei diagrame func\IeC {\c t}ionale}{31}{section.4.4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.5}Serviciul de date}{32}{section.4.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {4.6}Baza de date}{33}{section.4.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {5}Studiu de caz: Smart Home}{34}{chapter.5}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {6}Concluzii}{35}{chapter.6}
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografie}{36}{chapter*.29}

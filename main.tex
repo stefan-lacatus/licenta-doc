@@ -11,9 +11,8 @@
 \usepackage[style=verbose-ibid,backend=biber]{biblatex}
 \usepackage{wrapfig}
 \usepackage[export]{adjustbox}
-\bibliography{chapters/references} % write your list of references into referenser.bib located in Chapters
+\bibliography{chapters/references} 
 \graphicspath{ {img/} }
-% Table of contents
 \setcounter{secnumdepth}{5}
 \setcounter{tocdepth}{5}
 \usepackage{needspace}
@@ -26,10 +25,10 @@
 \usepackage{amsthm}
 \usepackage{caption}
 \usepackage{listings}
+
 \newtheorem{definition}{Definiţie}
 \newcommand{\code}[1]{\texttt{#1}}
 \Crefname{figure}{Figura}{Figuri}
-
 
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \crefname{algocfline}{alg.}{algs.}
@@ -72,8 +71,6 @@ Facultatea de Automatica si Calculatoare
 \pagestyle{plain}      
 \pagenumbering{arabic} % Page numbering starts from here
 
-% Example of structure
-
 \input{chapters/intoducere}
 
 \input{chapters/arhitectura} 
@@ -86,6 +83,6 @@ Facultatea de Automatica si Calculatoare
 
 \input{chapters/concluzie}  
 
-\printbibliography[title={Bibliografie}] % Change the title in the parenthes within the braces if you want
+\printbibliography[heading=bibintoc, title={Bibliografie}]
 
 \end{document}

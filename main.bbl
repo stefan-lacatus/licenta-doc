@@ -19,6 +19,42 @@
 
 \refsection{0}
   \sortlist{nty}{nty}
+    \entry{typeahead}{online}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labeltitlesource}{title}
+      \field{title}{Bootstrap 3 Typeahead}
+      \field{urlday}{02}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb https://github.com/bassjobsen/Bootstrap-3-Typeahead
+      \endverb
+    \endentry
+    \entry{tagsinput}{online}{}
+      \field{sortinit}{B}
+      \field{sortinithash}{4ecbea03efd0532989d3836d1a048c32}
+      \field{labeltitlesource}{title}
+      \field{title}{Bootstrap Tags Input}
+      \field{urlday}{04}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://timschlechter.github.io/bootstrap-tagsinput/examples/
+      \endverb
+    \endentry
+    \entry{codemirror}{online}{}
+      \field{sortinit}{C}
+      \field{sortinithash}{59f25d509f3381b07695554a9f35ecb2}
+      \field{labeltitlesource}{title}
+      \field{title}{CodeMirror}
+      \field{urlday}{02}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb https://codemirror.net/index.html
+      \endverb
+    \endentry
     \entry{toposort}{online}{}
       \field{sortinit}{D}
       \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
@@ -29,6 +65,18 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://courses.cs.washington.edu/courses/cse326/03wi/lectures/RaoLect20.pdf
+      \endverb
+    \endentry
+    \entry{dygraphs}{online}{}
+      \field{sortinit}{D}
+      \field{sortinithash}{78f7c4753a2004675f316a80bdb31742}
+      \field{labeltitlesource}{title}
+      \field{title}{Dygraphs is a fast, flexible open source JavaScript charting library}
+      \field{urlday}{03}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://dygraphs.com/
       \endverb
     \endentry
     \entry{functionBlocks}{online}{}
@@ -53,6 +101,18 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://geplc.com/downloads/Labs/GFS-384%20M03%20Function%20Block%20Diagram.pdf
+      \endverb
+    \endentry
+    \entry{gojs}{online}{}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labeltitlesource}{title}
+      \field{title}{GoJS Interactive Diagrams for JavaScript and HTML}
+      \field{urlday}{03}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://gojs.net/latest/index.html
       \endverb
     \endentry
     \entry{4610935}{book}{}
@@ -183,6 +243,29 @@
       \verb http://www.dee.ufrj.br/controle_automatico/cursos/IEC61131-3_Programming_Industrial_Automation_Systems.pdf
       \endverb
     \endentry
+    \entry{JSR223}{report}{}
+      \list{institution}{1}{%
+        {Sun Microsystems, Inc.}%
+      }
+      \list{publisher}{1}{%
+        {Java Community Process}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Java Specification Requests}
+      \field{issn}{2070-1721}
+      \field{month}{12}
+      \field{number}{223}
+      \field{title}{{ Scripting for the Java\texttrademark Platform}}
+      \field{type}{{JCP}}
+      \field{year}{2006}
+      \field{pages}{1\bibrangedash 140}
+      \range{pages}{140}
+      \verb{url}
+      \verb https://www.jcp.org/en/jsr/detail?id=223
+      \endverb
+    \endentry
     \entry{SpringBoot}{online}{}
       \field{sortinit}{S}
       \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
@@ -205,6 +288,27 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://pivotal.io/resources/1/case-studies
+      \endverb
+    \endentry
+    \entry{JSR292}{report}{}
+      \list{institution}{1}{%
+        {Sun Microsystems, Inc.}%
+      }
+      \list{publisher}{1}{%
+        {Java Community Process}%
+      }
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Java Specification Requests}
+      \field{issn}{2070-1721}
+      \field{month}{07}
+      \field{number}{292}
+      \field{title}{{Supporting Dynamically Typed Languages on the JavaTM Platform}}
+      \field{type}{{JCP}}
+      \field{year}{2011}
+      \verb{url}
+      \verb https://www.jcp.org/en/jsr/detail?id=292
       \endverb
     \endentry
     \entry{rfc4627}{report}{}
@@ -230,6 +334,18 @@
       \verb http://www.ietf.org/rfc/rfc4627.txt
       \endverb
     \endentry
+    \entry{jruby}{online}{}
+      \field{sortinit}{T}
+      \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
+      \field{labeltitlesource}{title}
+      \field{title}{The Ruby Programming Language on the JVM}
+      \field{urlday}{04}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://jruby.org/
+      \endverb
+    \endentry
     \entry{openTSDB}{online}{}
       \field{sortinit}{T}
       \field{sortinithash}{423d138a005a533b47e6475e39378bf2}
@@ -252,6 +368,29 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://www.kongzhi.net/files/download.php?id=8362
+      \endverb
+    \endentry
+    \entry{rfc3986}{report}{}
+      \list{institution}{1}{%
+        {RFC Editor}%
+      }
+      \list{publisher}{1}{%
+        {RFC Editor}%
+      }
+      \field{sortinit}{U}
+      \field{sortinithash}{8145509bd2718876fc77d31fd2cde117}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{Internet Requests for Comments}
+      \field{issn}{2070-1721}
+      \field{month}{01}
+      \field{number}{4627}
+      \field{title}{{Uniform Resource Identifier (URI): Generic Syntax}}
+      \field{type}{{RFC}}
+      \field{year}{2005}
+      \field{pages}{1\bibrangedash 61}
+      \range{pages}{61}
+      \verb{url}
+      \verb https://tools.ietf.org/html/rfc3986
       \endverb
     \endentry
   \endsortlist

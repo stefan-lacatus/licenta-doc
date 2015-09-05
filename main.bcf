@@ -2253,6 +2253,17 @@
     <bcf:citekey order="14">topoKahn</bcf:citekey>
     <bcf:citekey order="15">SpringBoot</bcf:citekey>
     <bcf:citekey order="16">springUseCase</bcf:citekey>
+    <bcf:citekey order="17">typeahead</bcf:citekey>
+    <bcf:citekey order="18">codemirror</bcf:citekey>
+    <bcf:citekey order="19">gojs</bcf:citekey>
+    <bcf:citekey order="20">tagsinput</bcf:citekey>
+    <bcf:citekey order="21">typeahead</bcf:citekey>
+    <bcf:citekey order="22">dygraphs</bcf:citekey>
+    <bcf:citekey order="23">rfc3986</bcf:citekey>
+    <bcf:citekey order="24">openTSDB</bcf:citekey>
+    <bcf:citekey order="25">JSR223</bcf:citekey>
+    <bcf:citekey order="26">JSR292</bcf:citekey>
+    <bcf:citekey order="27">jruby</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>
