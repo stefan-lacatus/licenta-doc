@@ -79,6 +79,18 @@
       \verb http://dygraphs.com/
       \endverb
     \endentry
+    \entry{iotGrowth}{online}{}
+      \field{sortinit}{F}
+      \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
+      \field{labeltitlesource}{title}
+      \field{title}{Facts and Forecasts: Billions of Things, Trillions of Dollars}
+      \field{urlday}{05}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.siemens.com/innovation/en/home/pictures-of-the-future/digitalization-and-software/internet-of-things-facts-and-forecasts.html
+      \endverb
+    \endentry
     \entry{functionBlocks}{online}{}
       \field{sortinit}{F}
       \field{sortinithash}{c6a7d9913bbd7b20ea954441c0460b78}
@@ -113,6 +125,31 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://gojs.net/latest/index.html
+      \endverb
+    \endentry
+    \entry{deloitteReport}{book}{}
+      \name{author}{1}{}{%
+        {{hash=be6ac529635671124aaefea6ca402f09}{Group}{G\bibinitperiod}{Deloitte}{D\bibinitperiod}{}{}{}{}}%
+      }
+      \strng{namehash}{be6ac529635671124aaefea6ca402f09}
+      \strng{fullhash}{be6ac529635671124aaefea6ca402f09}
+      \field{sortinit}{G}
+      \field{sortinithash}{1c854ef9177a91bf894e66485bdbd3ed}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Industry 4.0: Challenges and solutions for the digital transformation and use of exponential tehnologies}
+      \field{year}{2014}
+    \endentry
+    \entry{hibernate}{online}{}
+      \field{sortinit}{H}
+      \field{sortinithash}{82012198d5dfa657b8c4a168793268a6}
+      \field{labeltitlesource}{title}
+      \field{title}{Hibernate ORM:	Idiomatic persistence for Java and relational databases}
+      \field{urlday}{05}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://hibernate.org/orm/
       \endverb
     \endentry
     \entry{4610935}{book}{}
@@ -193,6 +230,18 @@
       \verb http://literature.rockwellautomation.com/idc/groups/literature/documents/pm/1756-pm009_-en-p.pdf
       \endverb
     \endentry
+    \entry{openHab}{online}{}
+      \field{sortinit}{o}
+      \field{sortinithash}{7803d2715d5e795e70382b084ab8d00e}
+      \field{labeltitlesource}{title}
+      \field{title}{openHAB: empowering the smart home}
+      \field{urlday}{05}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.openhab.org/features/introduction.html
+      \endverb
+    \endentry
     \entry{toposortArticle}{book}{}
       \name{author}{2}{}{%
         {{hash=e922c95258af7f4fa6570532feb90d74}{Pearce}{P\bibinitperiod}{David\bibnamedelima J.}{D\bibinitperiod\bibinitdelim J\bibinitperiod}{}{}{}{}}%
@@ -223,6 +272,18 @@
       \verb http://doi.acm.org/10.1145/1187436.1210590
       \endverb
       \keyw{Dynamic graph algorithms,topological sort}
+    \endentry
+    \entry{postgresql}{online}{}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labeltitlesource}{title}
+      \field{title}{PostgreSQL: Advantages}
+      \field{urlday}{05}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://www.postgresql.org/about/advantages/
+      \endverb
     \endentry
     \entry{IEC61131-3}{report}{}
       \list{institution}{1}{%
@@ -288,6 +349,18 @@
       \field{urlyear}{2015}
       \verb{url}
       \verb http://pivotal.io/resources/1/case-studies
+      \endverb
+    \endentry
+    \entry{springAsync}{online}{}
+      \field{sortinit}{S}
+      \field{sortinithash}{fd1e7c5ab79596b13dbbb67f8d70fb5a}
+      \field{labeltitlesource}{title}
+      \field{title}{Spring: Task Execution and Scheduling}
+      \field{urlday}{05}
+      \field{urlmonth}{09}
+      \field{urlyear}{2015}
+      \verb{url}
+      \verb http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/scheduling.html
       \endverb
     \endentry
     \entry{JSR292}{report}{}

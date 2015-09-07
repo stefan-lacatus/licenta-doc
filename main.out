@@ -10,24 +10,27 @@
 \BOOKMARK [2][]{subsection.2.2.4}{Blocul de procesare}{section.2.2}% 10
 \BOOKMARK [2][]{subsection.2.2.5}{Diagrama functie bloc\(FBD\)}{section.2.2}% 11
 \BOOKMARK [1][]{section.2.3}{Primirea datelor}{chapter.2}% 12
-\BOOKMARK [1][]{section.2.4}{Executarea unei diagrame}{chapter.2}% 13
-\BOOKMARK [2][]{subsection.2.4.1}{Ordinea executiei blocurilor}{section.2.4}% 14
-\BOOKMARK [2][]{subsection.2.4.2}{Generarea rezultatului}{section.2.4}% 15
-\BOOKMARK [0][]{chapter.3}{Interfata aplicatiei}{}% 16
-\BOOKMARK [0][]{chapter.4}{Implementarea Alegria}{}% 17
-\BOOKMARK [1][]{section.4.1}{Interfata Web}{chapter.4}% 18
-\BOOKMARK [2][]{subsection.4.1.1}{Securitate}{section.4.1}% 19
-\BOOKMARK [2][]{subsection.4.1.2}{Management}{section.4.1}% 20
-\BOOKMARK [3][]{subsubsection.4.1.2.1}{Managementul blocurilor de intrare}{subsection.4.1.2}% 21
-\BOOKMARK [3][]{subsubsection.4.1.2.2}{Managementul blocurilor de procesare}{subsection.4.1.2}% 22
-\BOOKMARK [3][]{subsubsection.4.1.2.3}{Managementul diagramelor}{subsection.4.1.2}% 23
-\BOOKMARK [3][]{subsubsection.4.1.2.4}{Administrare tag-uri}{subsection.4.1.2}% 24
-\BOOKMARK [2][]{subsection.4.1.3}{Monitorizare}{section.4.1}% 25
-\BOOKMARK [1][]{section.4.2}{API-ul aplicatiei}{chapter.4}% 26
-\BOOKMARK [1][]{section.4.3}{Executarea unui bloc de procesare}{chapter.4}% 27
-\BOOKMARK [1][]{section.4.4}{Executarea unei diagrame functionale}{chapter.4}% 28
+\BOOKMARK [0][]{chapter.3}{Interfata aplicatiei}{}% 13
+\BOOKMARK [0][]{chapter.4}{Implementarea Alegria}{}% 14
+\BOOKMARK [1][]{section.4.1}{Interfata Web}{chapter.4}% 15
+\BOOKMARK [2][]{subsection.4.1.1}{Securitate}{section.4.1}% 16
+\BOOKMARK [2][]{subsection.4.1.2}{Management}{section.4.1}% 17
+\BOOKMARK [3][]{subsubsection.4.1.2.1}{Managementul blocurilor de intrare}{subsection.4.1.2}% 18
+\BOOKMARK [3][]{subsubsection.4.1.2.2}{Managementul blocurilor de procesare}{subsection.4.1.2}% 19
+\BOOKMARK [3][]{subsubsection.4.1.2.3}{Managementul diagramelor}{subsection.4.1.2}% 20
+\BOOKMARK [3][]{subsubsection.4.1.2.4}{Administrare tag-uri}{subsection.4.1.2}% 21
+\BOOKMARK [2][]{subsection.4.1.3}{Monitorizare}{section.4.1}% 22
+\BOOKMARK [1][]{section.4.2}{API-ul aplicatiei}{chapter.4}% 23
+\BOOKMARK [1][]{section.4.3}{Executarea unui bloc de procesare}{chapter.4}% 24
+\BOOKMARK [1][]{section.4.4}{Executarea unei diagrame functionale}{chapter.4}% 25
+\BOOKMARK [2][]{subsection.4.4.1}{Ordinea executiei blocurilor}{section.4.4}% 26
+\BOOKMARK [2][]{subsection.4.4.2}{Generarea rezultatului}{section.4.4}% 27
+\BOOKMARK [2][]{subsection.4.4.3}{Implementarea \356n Aplicatie}{section.4.4}% 28
 \BOOKMARK [1][]{section.4.5}{Serviciul de date}{chapter.4}% 29
 \BOOKMARK [1][]{section.4.6}{Baza de date}{chapter.4}% 30
-\BOOKMARK [0][]{chapter.5}{Studiu de caz: Smart Home}{}% 31
-\BOOKMARK [0][]{chapter.6}{Concluzii}{}% 32
-\BOOKMARK [0][]{chapter*.29}{Bibliografie}{}% 33
+\BOOKMARK [2][]{subsection.4.6.1}{Stocarea entitatilor}{section.4.6}% 31
+\BOOKMARK [0][]{chapter.5}{Exemplu de utilizare: Smart Home}{}% 32
+\BOOKMARK [0][]{chapter.6}{Concluzii si Dezvoltarii ulterioare}{}% 33
+\BOOKMARK [1][]{section.6.1}{Concluzii}{chapter.6}% 34
+\BOOKMARK [1][]{section.6.2}{Dezvoltarii ulterioare}{chapter.6}% 35
+\BOOKMARK [0][]{chapter*.42}{Bibliografie}{}% 36

@@ -2,6 +2,7 @@
 \usepackage[romanian]{babel} % choose the language
 \usepackage[utf8]{inputenc} % äöå
 \usepackage[T1]{fontenc}
+\usepackage{textcomp}
 \usepackage[a4paper, inner=3cm, outer=3cm, top=3cm, bottom=3cm]{geometry}
 \usepackage[onehalfspacing]{setspace} 
 \usepackage{mathptmx} % Times New Roman
@@ -25,11 +26,13 @@
 \usepackage{amsthm}
 \usepackage{caption}
 \usepackage{listings}
+\usepackage{eurosym}
+ 
 
 \newtheorem{definition}{Definiţie}
 \newcommand{\code}[1]{\texttt{#1}}
 \Crefname{figure}{Figura}{Figuri}
-
+\Crefname{chapter}{Capitolul}{Capitolele}
 \usepackage[linesnumbered,ruled,vlined]{algorithm2e}
 \crefname{algocfline}{alg.}{algs.}
 \Crefname{algocfline}{Algoritmul}{Algoritmi}
@@ -44,21 +47,32 @@
 
 \begin{titlepage}
 \thispagestyle{empty}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1.2\textwidth, center]{logos}
+\end{figure}
+\begin{center}
+	\large{Universitatea Politehnica Bucureşti\\
+	Facultatea de Automatică şi Calculatoare\\
+	Departamentul de Automatică şi Ingineria Sistemelor\\}
+\end{center}
 \mbox{}\\[6pc]
 \begin{center}
-	\Huge{Sistem de achiziţie, procesare si distribuite a datelor}\\[2pc]
 	
-	\Large{Petrişor-Ştefan Lăcătuş}\\[1pc]
-	\large{Septembrie 2015}\\[2pc]
+	\Huge{Sistem de achiziţie, procesare şi distribuţie a datelor}\\[2pc]
 	
-	Automatică şi Ingineria Sistemelor\\
-Facultatea de Automatica si Calculatoare
 \end{center}
 \vfill
+\begin{flushright} 
+	\Large{Absolvent \\
+		Petrişor-Ştefan Lăcătuş}\\[1pc]
+\end{flushright}
+\noindent \Large{Coordonator\\
+	 Ş.L. Andreea Udrea}\\
 
-\noindent Coordonator: Ş.L. Andreea Udrea
-
+\begin{center} 
+	\large{Septembrie 2015}\\[2pc]
+\end{center}
 \end{titlepage}
 
 %------ end of cover page stuff

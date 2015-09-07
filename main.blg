@@ -1,17 +1,17 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'main.blg'
-[59] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[59] Biber.pm:333> INFO - Reading 'main.bcf'
-[317] Biber.pm:645> INFO - Found 23 citekeys in bib section 0
-[340] Biber.pm:2977> INFO - Processing section 0
-[360] Biber.pm:3115> INFO - Looking for bibtex format file 'chapters/references.bib' for section 0
-[404] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[441] bibtex.pm:895> INFO - Found BibTeX data source 'chapters/references.bib'
-[481] Utils.pm:146> WARN - BibTeX subsystem: D:\Users\placatus\AppData\Local\Temp\26Sd9jdFw1\references.bib_17016.utf8, line 34, warning: undefined macro "61131-3"
-[483] Utils.pm:146> WARN - The field 'number' in entry 'IEC61131-3' cannot be null, deleting it
-[747] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[748] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'variable = shifted' with 'variable = non-ignorable'
-[748] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ro-RO'
-[823] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[884] bbl.pm:596> INFO - Output to main.bbl
-[887] Biber.pm:106> INFO - WARNINGS: 2
+[55] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[55] Biber.pm:333> INFO - Reading 'main.bcf'
+[288] Biber.pm:645> INFO - Found 29 citekeys in bib section 0
+[309] Biber.pm:2977> INFO - Processing section 0
+[330] Biber.pm:3115> INFO - Looking for bibtex format file 'chapters/references.bib' for section 0
+[376] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[413] bibtex.pm:895> INFO - Found BibTeX data source 'chapters/references.bib'
+[455] Utils.pm:146> WARN - BibTeX subsystem: D:\Users\placatus\AppData\Local\Temp\M6pAAGZeK8\references.bib_10860.utf8, line 33, warning: undefined macro "61131-3"
+[457] Utils.pm:146> WARN - The field 'number' in entry 'IEC61131-3' cannot be null, deleting it
+[752] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'variable = shifted' with 'variable = non-ignorable'
+[753] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[753] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ro-RO'
+[836] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[900] bbl.pm:596> INFO - Output to main.bbl
+[903] Biber.pm:106> INFO - WARNINGS: 2

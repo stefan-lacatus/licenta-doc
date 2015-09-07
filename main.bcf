@@ -2237,33 +2237,39 @@
     <bcf:datasource type="file" datatype="bibtex">chapters/references.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
-    <bcf:citekey order="1">openTSDB</bcf:citekey>
-    <bcf:citekey order="2">4610935</bcf:citekey>
-    <bcf:citekey order="3">rfc4627</bcf:citekey>
-    <bcf:citekey order="4">functionBlocks</bcf:citekey>
-    <bcf:citekey order="5">IEC61131-3</bcf:citekey>
-    <bcf:citekey order="6">IEC61131-3</bcf:citekey>
-    <bcf:citekey order="7">IEC61499</bcf:citekey>
+    <bcf:citekey order="1">iotGrowth</bcf:citekey>
+    <bcf:citekey order="2">deloitteReport</bcf:citekey>
+    <bcf:citekey order="3">openHab</bcf:citekey>
+    <bcf:citekey order="4">openTSDB</bcf:citekey>
+    <bcf:citekey order="5">4610935</bcf:citekey>
+    <bcf:citekey order="6">rfc4627</bcf:citekey>
+    <bcf:citekey order="7">functionBlocks</bcf:citekey>
     <bcf:citekey order="8">IEC61131-3</bcf:citekey>
-    <bcf:citekey order="9">TM241</bcf:citekey>
-    <bcf:citekey order="10">Logix5000</bcf:citekey>
-    <bcf:citekey order="11">GEFANUC</bcf:citekey>
-    <bcf:citekey order="12">toposort</bcf:citekey>
-    <bcf:citekey order="13">toposortArticle</bcf:citekey>
-    <bcf:citekey order="14">topoKahn</bcf:citekey>
-    <bcf:citekey order="15">SpringBoot</bcf:citekey>
-    <bcf:citekey order="16">springUseCase</bcf:citekey>
+    <bcf:citekey order="9">IEC61131-3</bcf:citekey>
+    <bcf:citekey order="10">IEC61499</bcf:citekey>
+    <bcf:citekey order="11">SpringBoot</bcf:citekey>
+    <bcf:citekey order="12">springUseCase</bcf:citekey>
+    <bcf:citekey order="13">typeahead</bcf:citekey>
+    <bcf:citekey order="14">codemirror</bcf:citekey>
+    <bcf:citekey order="15">gojs</bcf:citekey>
+    <bcf:citekey order="16">tagsinput</bcf:citekey>
     <bcf:citekey order="17">typeahead</bcf:citekey>
-    <bcf:citekey order="18">codemirror</bcf:citekey>
-    <bcf:citekey order="19">gojs</bcf:citekey>
-    <bcf:citekey order="20">tagsinput</bcf:citekey>
-    <bcf:citekey order="21">typeahead</bcf:citekey>
-    <bcf:citekey order="22">dygraphs</bcf:citekey>
-    <bcf:citekey order="23">rfc3986</bcf:citekey>
-    <bcf:citekey order="24">openTSDB</bcf:citekey>
-    <bcf:citekey order="25">JSR223</bcf:citekey>
-    <bcf:citekey order="26">JSR292</bcf:citekey>
-    <bcf:citekey order="27">jruby</bcf:citekey>
+    <bcf:citekey order="18">dygraphs</bcf:citekey>
+    <bcf:citekey order="19">rfc3986</bcf:citekey>
+    <bcf:citekey order="20">openTSDB</bcf:citekey>
+    <bcf:citekey order="21">JSR223</bcf:citekey>
+    <bcf:citekey order="22">JSR292</bcf:citekey>
+    <bcf:citekey order="23">jruby</bcf:citekey>
+    <bcf:citekey order="24">IEC61131-3</bcf:citekey>
+    <bcf:citekey order="25">TM241</bcf:citekey>
+    <bcf:citekey order="26">Logix5000</bcf:citekey>
+    <bcf:citekey order="27">GEFANUC</bcf:citekey>
+    <bcf:citekey order="28">toposort</bcf:citekey>
+    <bcf:citekey order="29">toposortArticle</bcf:citekey>
+    <bcf:citekey order="30">topoKahn</bcf:citekey>
+    <bcf:citekey order="31">springAsync</bcf:citekey>
+    <bcf:citekey order="32">postgresql</bcf:citekey>
+    <bcf:citekey order="33">hibernate</bcf:citekey>
   </bcf:section>
   <bcf:sortlist section="0" name="nty" type="entry" sortscheme="nty">
   <bcf:sorting>
