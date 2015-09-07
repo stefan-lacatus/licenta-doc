@@ -3,17 +3,17 @@
 
 \section{Prezentare generală}
 Sistemul de achiziţie, procesare şi distribuţie a datelor a fost conceput ca o platformă de dezvoltare rapidă, bazat pe modele. Utilizatorul poate să îşi concentreze resursele asupra soluţiei finale, abstractizând detaliile implementării prin folosirea unor metode de programare vizuală, cu blocuri refolosibile în mai multe aplicaţii diferite. 
-Aplicaţia a fost construită pe baza unei arhitecturi modulare; modulele fiind cât mai puţin interconectate, permiţând modificări rapide şi testarea modulelor individual. Urmărind aceasta gândire modulare s-au identificat 4 componente esenţiale: 
+Aplicaţia a fost construită pe baza unei arhitecturi modulare; modulele fiind cât mai puţin interconectate, permiţând modificări rapide şi testarea modulelor individual. Urmărind această gândire modulare s-au identificat 4 componente esenţiale: 
 \begin{itemize}
 	\item \textbf{Baza de date} Asigură stocarea datelor şi a entităţilor existente;
-	\item \textbf{Interfaţa web pentru management} O interfaţă uşor de utilizat care permite  utilizatorului să manipuleze canale, diagrame, blocuri de procesare, dar şi alţi utilizatori
-	\item \textbf{API-ul pentru date} Un API specializat pentru achiziţia de  date şi să permită informarea altor dispozitive cu privire la apariţia unor date noi.
+	\item \textbf{Interfaţa web pentru management} O interfaţă uşor de utilizat ce permite  utilizatorului să manipuleze canale, diagrame, blocuri de procesare, dar şi alţi utilizatori
+	\item \textbf{API-ul pentru date} Un API specializat în achiziţia de  date şi care permite informarea altor dispozitive cu privire la apariţia unor date noi.
 	\item \textbf{Elemente de procesare} Asigură procesarea datelor, atât în cadrul blocurilor de procesare, cât şi în cadrul diagramelor funcţionale.
 \end{itemize}
 \begin{figure}
 	\centering
 	\includegraphics[width=1.3\textwidth, center]{arhitecturaGenerala}
-	\caption{Arhitectura generala a aplicaţiei}
+	\caption{Arhitectura generală a aplicaţiei}
 	\label{fig:arhitecture}
 \end{figure}
 
@@ -21,9 +21,9 @@ Aplicaţia a fost construită pe baza unei arhitecturi modulare; modulele fiind 
 \begin{itemize}
 	\label{list:entities}
 	\item \textbf{Canalul de date} Reprezintă elementul de bază a sistemului ce asigură recepţia, persistenţa şi emiterea de date.  La crearea canalului, datele dintr-un canal, trebuie să respecte un format prestabilit. Pentru transformarea datelor în formatul stabilit se poate introduce un bloc de pre-procesarea care transformă datele din formatul brut în formatul standard;
-	\item \textbf{Blocul de intrare} Elementul ce mapează un element din lumea real în interiorul platformei. Blocurile de intrare permit gruparea mai multor canale de date într-o structura unică;
+	\item \textbf{Blocul de intrare} Elementul ce mapează un element din lumea reală în interiorul platformei. Blocurile de intrare permit gruparea mai multor canale de date într-o structura unică;
 	\item \textbf{Blocul de procesare} Elementul dinamic al aplicaţiei ce aplică transformări asupra datelor. Un bloc de procesare primeşte ca intrări mai multe canale de date şi are la ieşire un alt canal de date. Utilizatorul poate folosi blocuri standard, existente în sistem, sau poate implementa blocuri noi direct în interfaţa programului;
-	\item \textbf{Diagrama funcţie bloc(FBD)} Foloseşte blocuri de intrare, canale de date şi blocuri de procesare pentru a descrie o funcţie complexă între 0-n intrări şi o ieşire. Aceste diagrame folosesc datele - aflate pe canalele de date - ce sunt trimise către blocurile de procesare şi la final se obţine un singur rezultat care este salvat pe un canal de date.
+	\item \textbf{Diagrama funcţie bloc(FBD)} Foloseşte blocuri de intrare, canale de date şi blocuri de procesare pentru a descrie o funcţie complexă cu 0-n intrări şi o ieşire. Aceste diagrame folosesc datele - aflate pe canalele de date - ce sunt trimise către blocurile de procesare şi la final se obţine un singur rezultat care este salvat pe un canal de date.
 \end{itemize}
 
 \subsection{Baza de date}
@@ -31,9 +31,9 @@ Aplicaţia a fost construită pe baza unei arhitecturi modulare; modulele fiind 
 Fiind vorba despre o aplicaţie puternic bazata pe date, aceasta are nevoie de un nivel de persistenţă de înaltă performaţă. 
 Urmărind arhitectura propusă din \cref{fig:arhitecture}, putem identifica două cazuri de utilizare pentru baza de date: 
 \begin{itemize}
-	\item Stocarea modelului entităţilor: fiecare entitate descrisă în lista de mai sus trebuie stocată în baza de date, într-o structură relaţională. Entităţile sunt puternic interconectate şi de aceea este recomandată o baza de date relaţională, de tip SQL. 
-	Din punct de vedere a dimensiunii setului de date, chiar şi în aplicaţiile de mare complexitate, este vorba despre câteva milioane de înregistrări. Factorul care face acest număr să crească este conectarea a tot mai mult dispozitive, ce duce la din ce în ce mai multe canale de date. Astfel, stocarea entităţilor nu va aduce probleme de performaţă. 
-	\item Stocarea datelor: în baza de date vor fi stocate atât datele primite pe fiecare canal asociat unui bloc de intrare, cât şi datele procesate de diagrame. Aceste date au un puternic caracter istoric, reprezentând o serie de timp în care se reţine  valoarea fiecărui punct de date la un anumit moment. Problema stocării acestor date este una mai complicată datorită necesităţii unei puternice scalari a bazei de date. Această problemă reprezintă un caz de utilizare pentru o baza de date NoSQL sau chiar o baza de date specializata în stocarea seriilor de timp \autocite{openTSDB}.  
+	\item Stocarea modelului entităţilor: fiecare entitate descrisă în lista de mai sus trebuie stocată în baza de date, într-o structură relaţională. Entităţile sunt puternic interconectate şi de aceea este recomandată o bază de date relaţională, de tip SQL. 
+	Din punct de vedere al dimensiunii setului de date, chiar şi în aplicaţiile de mare complexitate, este vorba despre câteva milioane de înregistrări. Factorul care face acest număr să crească este conectarea a tot mai multor dispozitive, ce duce la din ce în ce mai multe canale de date. Astfel, stocarea entităţilor nu va aduce probleme de performaţă. 
+	\item Stocarea datelor: în baza de date vor fi stocate atât datele primite pe fiecare canal asociat unui bloc de intrare, cât şi datele procesate de diagrame. Aceste date au un puternic caracter istoric, reprezentând o serie de timp în care se reţine  valoarea fiecărui punct de date la un anumit moment. Problema stocării acestor date este una mai complicată datorită necesităţii unei puternice scalari a bazei de date. Această problemă reprezintă un caz de utilizare pentru o baza de date NoSQL sau chiar o bază de date specializată în stocarea seriilor de timp \autocite{openTSDB}.  
 \end{itemize}
 
 \subsection{Aplicaţia Java}
@@ -41,7 +41,7 @@ Legătura dintre baza de date şi utilizatorii finali se face prin intermediul u
 Separarea modulelor s-a făcut pe baza scopului acestora astfel:
 \begin{itemize}
 	\item \textbf{Administrare}: pentru administrarea entităţilor din baza de date. Aceste module permit atât operaţii de căutare şi afişare, cât şi de creere, editare şi ştergere a utilizatorilor, a blocurilor de intrare şi funcţionale, şi a diagramelor. Fiecare dispune de o interfaţă HTML5;
-	\item \textbf{Monitorizare}: permit monitorizarea execuţiei aplicaţiei de la vizualizat loguri pentru a diagnostica probleme până la realizarea de grafice a datelor pe anumite canale. Tot aici este disponibilă şi funcţia de a exporta date în formate uzuale (CSV, fişiere Microsoft Excel, etc);
+	\item \textbf{Monitorizare}: permite monitorizarea execuţiei aplicaţiei de la vizualizat loguri pentru a diagnostica probleme până la realizarea de grafice folosind datele de pe anumite canale. Tot aici este disponibilă şi funcţia de a exporta date în formate uzuale (CSV, fişiere Microsoft Excel, etc);
 	\item \textbf{API}: aplicaţia dispune şi de un API pentru a fi folosit programatic de către alte aplicaţii externe. Acesta este format din două componente: servicii pentru administrarea entităţilor şi servicii pentru adăugarea şi extragerea datelor;
 	\item \textbf{Elemente de procesare}: sunt împărţite în două subcategorii: cele pentru procesarea blocurilor de intrare şi de procesare, şi cele pentru procesarea diagramelor;
 	\item \textbf{Elemente stocare date}: permit interfaţarea cu sursele de date. Prin intermediul unei interfaţe abstractă, acestea asigură servicii de introducere şi extragere a datelor care nu ţin cont de modul în care baza de date este implementată;
@@ -52,7 +52,7 @@ Separarea modulelor s-a făcut pe baza scopului acestora astfel:
 \subsection{Punctul de date}
 
 Punctul de date reprezintă elementul constructiv al sistemul reprezentând obiectul procesării, stocării şi distribuţiei. 
-Sistemul accepta intern date în formatele: 
+Sistemul acceptă intern date în următoarele formate: 
 \begin{wrapfigure}{r}{0.38\textwidth}
 	\centering
 	\includegraphics[width=0.38\textwidth]{dataType}
@@ -60,7 +60,7 @@ Sistemul accepta intern date în formatele:
 \end{wrapfigure}
 \begin{itemize}
 	\item \textbf{Întreg}: numere în intervalul $(-2^{63}, 2^{63} -1)$, fără virgulă; foloseşte \textit{Long} pentru reprezentare internă;
-	\item \textbf{Real}: numere cu virgulă, având dubla precizie, reprezentate pe 64-bit conform standardului \autocite{4610935} IEEE 754;  foloseşte \textit{Double} pentru reprezentare internă;
+	\item \textbf{Real}: numere cu virgulă, având dublă precizie, reprezentate pe 64-bit conform standardului \autocite{4610935} IEEE 754;  foloseşte \textit{Double} pentru reprezentare internă;
 	\item \textbf{Sir de caractere}: Un şir de caractere fără lungime limită ce trebuie formatat conform \autocite{rfc4627}. 
 	\item \textbf{Obiect}: Un obiect Java serializat în text. Intern, asemănător cu tipul de date String. 
 \end{itemize}
@@ -73,22 +73,22 @@ Sistemul accepta intern date în formatele:
 
 \subsection{Canalul de date}
 
-Canalul de date este entitatea care asigura "curgerea" datelor prin sistem. Orice punct de date din sistem aparţine unui canal, acest lucru fiind realizat drept constrângere atât la nivelul aplicaţiei, cât şi la nivelul bazei de date.
+Canalul de date este entitatea care asigură "curgerea" datelor prin sistem. Orice punct de date din sistem aparţine unui canal, acest lucru fiind realizat drept constrângere atât la nivelul aplicaţiei, cât şi la nivelul bazei de date.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=0.55\textwidth]{dataChannel}
 	\caption{Clasa DataChannel}
 \end{figure}
 
-Canalul de date este şi mijlocul prin care utilizatorul interacţionează cu punctele de date. Când un dispozitiv adaugă date noi în sistem, acestea sunt ataşate unui canal  care poate fi folosit ca una dintre intrările unei diagrame de blocuri funcţionale. De asemenea, datele procesate de o diagramă sunt ataşate unui canal, permiţând apoi accesul pentru extragerea de datelor deja existente şi pentru a primi notificări de fiecare dată când pe un canal apar informaţii noi.
+Canalul de date este şi mijlocul prin care utilizatorul interacţionează cu punctele de date. Când un dispozitiv adaugă date noi în sistem, acestea sunt ataşate unui canal  care poate fi folosit ca una dintre intrările unei diagrame de blocuri funcţionale. De asemenea, datele procesate de o diagramă sunt ataşate unui canal permiţând apoi accesul pentru extragerea datelor deja existente şi pentru a primi notificări de fiecare dată când pe un canal apar informaţii noi.
 
-În plus, un canal de date poate avea şi un bloc de preprocesare ataşat. Acesta este executat de fiecare data când date noi încearcă să fie introduse în canal, permiţând validarea şi transformarea datelor brute în date ce respectă tipul de date al canalului.  
+În plus, un canal de date poate avea şi un bloc de preprocesare ataşat. Acesta este executat de fiecare dată când date noi încearcă să fie introduse în canal, permiţând validarea şi transformarea datelor brute în date ce respectă tipul de date al canalului.  
 \subsection{Blocul de intrare}
-Blocurile de intrare modelează elemente reale în Alegria, grupând mai multe canale de date şi expunându-le pentru a permite introducerea datelor din exterior. Acestea descriu modul în care datele sunt legate de un element real. 
+Blocurile de intrare modelează elemente reale în aplicaţie, grupând mai multe canale de date şi expunându-le pentru a permite introducerea datelor din exterior. Acestea descriu modul în care datele sunt legate de un element real. 
 
-Spre exemplu, o sursa inteligentă si conectată de alimentare neîntreruptibilă din \cref{fig:ups} poate fi privită ca un bloc de intrare, unde fiecare senzor este reprezentat de un canal de date. Dispozitivul inteligent devine astfel conectat la platforma şi acesta poate sa trimită date către aceasta. Pentru ca datele pot sa aibă perioade de eşantionare diferite, dispozitivul trimite date de la unul sau mai mulţi senzori odată, fiecare canal de date fiind tratat individual.
+Spre exemplu, o sursă inteligentă si conectată de alimentare neîntreruptibilă din \cref{fig:ups} poate fi privită ca un bloc de intrare, unde fiecare senzor este reprezentat de un canal de date. Dispozitivul inteligent devine astfel conectat la platforma şi acesta poate să trimită date către aceasta. Pentru că datele pot avea perioade de eşantionare diferite, dispozitivul trimite date de la unul sau mai mulţi senzori odată, fiecare canal de date fiind tratat individual.
 
-Un alt mod în care blocurile de intrare pot fi privite este ca obiecte, sau "Things" în cadrul Internetului Tuturor Lucrurilor (IoT). Astfel, putem privi blocurile de intrare ca dispozitive ce monitorizează bătăile inimii sau activitatea celebrară, ca automobile cu reţele complexe de senzori, sau chiar aplicaţii business ce generează date în timp real. Prin acest mijloc, dispozitive inteligente se pot conecta în platforma, fie trimiţând direct date, fie prin intermediul unui agent care se afla pe dispozitiv, agent ce funcţionează ca un gateway, implementând protocoale proprietare de comunicaţie.
+Un alt mod în care blocurile de intrare pot fi privite este ca obiecte, sau "Things" în cadrul Internetului Tuturor Lucrurilor (Internet of Things - IoT). Astfel, putem privi blocurile de intrare ca dispozitive ce monitorizează bătăile inimii sau activitatea celebrară, ca automobile cu reţele complexe de senzori, sau chiar aplicaţii de lucru ce generează date în timp real. Prin acest mijloc, dispozitive inteligente se pot conecta în platformă, fie trimiţând direct date, fie prin intermediul unui agent care se află pe dispozitiv, agent ce funcţionează ca un gateway, implementând protocoale proprietare de comunicaţie.
 
 \begin{figure}[H]
 	\centering
@@ -104,7 +104,7 @@ Un alt mod în care blocurile de intrare pot fi privite este ca obiecte, sau "Th
 
 \subsection{Blocul de procesare}
 
-Blocurile de procesare realizează operaţiile transformare a datelor. Din punct de vedere funcţional, acestea au la intrare ultimele date introduse de pe mai multe canale şi returnează un singur punct de date, comportându-se ca un element de tip "back-box"\autocite{functionBlocks}. Pentru implementare, utilizatorul foloseşte limbaje dinamice moderne, ca JavaScript sau Ruby, scriind cod direct în interfaţa web. Acest cod este rulat de către server. 
+Blocurile de procesare realizează operaţiile transformare a datelor. Din punct de vedere funcţional, acestea au la intrare ultimele date introduse de pe mai multe canale şi returnează un singur punct de date, comportându-se ca un element de tip "black-box"\autocite{functionBlocks}. Pentru implementare, utilizatorul foloseşte limbaje dinamice moderne, ca JavaScript sau Ruby, scriind cod direct în interfaţa web. Acest cod este rulat de către server. 
 Conceptul de blocuri de procesare reprezinta o implementare a blocurilor de operaţii definite în standardul  IEC61131-3 \autocite[Apendix C]{IEC61131-3} .
 
 Blocuri pre-implementate, existente în orice instantă a platformei, permit rezolvarea de probleme complexe cu cunoştinţe minime de programare.
