@@ -273,6 +273,32 @@
       \endverb
       \keyw{Dynamic graph algorithms,topological sort}
     \endentry
+    \entry{ptc}{book}{}
+      \name{author}{2}{}{%
+        {{hash=0c205deb7feba978abbb85c57f2d0fc0}{Porter}{P\bibinitperiod}{Michael\bibnamedelima E.}{M\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+        {{hash=a8fef2e63523fb0f73c8fd9f11c0882d}{Heppelmann.}{H\bibinitperiod}{James\bibnamedelima E.}{J\bibinitperiod\bibinitdelim E\bibinitperiod}{}{}{}{}}%
+      }
+      \list{publisher}{1}{%
+        {Harvard}%
+      }
+      \strng{namehash}{9f12b89fae53685dd467ea4c9fad18fb}
+      \strng{fullhash}{9f12b89fae53685dd467ea4c9fad18fb}
+      \field{sortinit}{P}
+      \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0001-0782}
+      \field{journaltitle}{Harvard Business Review}
+      \field{month}{11}
+      \field{number}{11}
+      \field{title}{How Smart, Connected Products Are Transforming Competition}
+      \field{year}{2014}
+      \field{pages}{64\bibrangedash 88}
+      \range{pages}{25}
+      \verb{url}
+      \verb http://www.hbs.edu/faculty/Pages/item.aspx?num=48195
+      \endverb
+    \endentry
     \entry{postgresql}{online}{}
       \field{sortinit}{P}
       \field{sortinithash}{c0a4896d0e424f9ca4d7f14f2b3428e7}

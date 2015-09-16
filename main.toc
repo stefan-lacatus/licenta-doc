@@ -17,19 +17,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.1}Punctul de date}{6}{subsection.2.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Canalul de date}{8}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.2}Canalul de date}{7}{subsection.2.2.2}
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.2.3}Blocul de intrare}{8}{subsection.2.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.4}Blocul de procesare}{10}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.4}Blocul de procesare}{9}{subsection.2.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.5}Diagrama func\IeC {\c t}ie bloc(FBD)}{11}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.5}Diagrama func\IeC {\c t}ie bloc (FBD)}{11}{subsection.2.2.5}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Primirea datelor}{12}{section.2.3}
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {3}Interfa\IeC {\c t}a aplica\IeC {\c t}iei}{15}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Implementarea Alegria}{20}{chapter.4}
+\contentsline {chapter}{\numberline {4}Implementarea aplica\IeC {\c t}iei de achizi\IeC {\c t}ie, procesare \IeC {\c s}i distribu\IeC {\c t}ie a datelor (Alegria)}{20}{chapter.4}
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.1}Interfa\IeC {\c t}a Web}{20}{section.4.1}
 \defcounter {refsection}{0}\relax 
@@ -55,22 +55,22 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.4.1}Ordinea execu\IeC {\c t}iei blocurilor}{33}{subsection.4.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.2}Generarea rezultatului}{36}{subsection.4.4.2}
+\contentsline {subsection}{\numberline {4.4.2}Generarea rezultatului}{35}{subsection.4.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.3}Implementarea \IeC {\^\i }n Aplica\IeC {\c t}ie}{36}{subsection.4.4.3}
+\contentsline {subsection}{\numberline {4.4.3}Implementarea execu\IeC {\c t}iei}{36}{subsection.4.4.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Serviciul de date}{38}{section.4.5}
+\contentsline {section}{\numberline {4.5}Serviciul de date}{37}{section.4.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Baza de date}{39}{section.4.6}
+\contentsline {section}{\numberline {4.6}Baza de date}{38}{section.4.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}Stocarea entit\IeC {\u a}\IeC {\c t}ilor}{39}{subsection.4.6.1}
+\contentsline {subsection}{\numberline {4.6.1}Stocarea entit\IeC {\u a}\IeC {\c t}ilor}{38}{subsection.4.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Exemplu de utilizare: Smart Home}{42}{chapter.5}
+\contentsline {chapter}{\numberline {5}Exemplu de utilizare: Smart Home}{41}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Concluzii \IeC {\c s}i Dezvolt\IeC {\u a}rii ulterioare}{45}{chapter.6}
+\contentsline {chapter}{\numberline {6}Concluzii \IeC {\c s}i Dezvolt\IeC {\u a}rii ulterioare}{44}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Concluzii}{45}{section.6.1}
+\contentsline {section}{\numberline {6.1}Concluzii}{44}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Dezvolt\IeC {\u a}rii ulterioare}{45}{section.6.2}
+\contentsline {section}{\numberline {6.2}Dezvolt\IeC {\u a}rii ulterioare}{44}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografie}{46}{chapter*.42}
+\contentsline {chapter}{Bibliografie}{45}{chapter*.42}

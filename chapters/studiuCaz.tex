@@ -1,24 +1,24 @@
 \chapter{Exemplu de utilizare: Smart Home}
 \label{chapter:studiuCaz}
 
-Pentru a demonstra fiabilitatea platformei, acest capitol propune o soluţie pentru problema automatizării unei case. O asemenea soluţie, ieftină şi uşor de implementat încă lipseşte de pe piaţă, sistemele profesionale fiind foarte scumpe, iar cele open-source greu de instalat şi configurat.
+Pentru a demonstra fiabilitatea platformei, acest capitol propune o soluţie pentru problema automatizării unei case. O asemenea soluţie ieftină şi uşor de implementat lipseşte încă de pe piaţă, sistemele profesionale fiind foarte scumpe, iar cele open-source sunt greu de instalat şi configurat.
 
-Urmărim deci rezolvarea automatizării unei case cu un dormitor si o sufragerie, în care următoarele dispozitive au fost instalate:
+Urmărim deci rezolvarea automatizării unei case cu un dormitor şi o sufragerie, în care au fost instalate următoarele dispozitive:
 \begin{itemize}
-	\item Reţea de senzori inteligenţi, distribuiţi în toate camerele, capabili să ofere informaţii legate numărul de oameni din casă.
-	\item Sistem de iluminare inteligentă, controlabil de la distantă.
+	\item Reţea de senzori inteligenţi, distribuiţi în toate camerele, capabili să ofere informaţii cu privire la numărul de oameni din casă.
+	\item Sistem de iluminare inteligent, controlabil de la distanţă.
 	\item Un dispozitiv automat de închidere a uşii de la intrare.
 \end{itemize}
-Automatizarea constă în:
+Automatizarea funcţionează astfel:
 \begin{itemize}
-	\item Atunci când nu mai exista oameni în casă, uşa trebuie încuiată;
-	\item După un minut de când nu se mai află nimeni într-o camera lumina din acea cameră trebuie stinsă.
-	\item Uşa se încuie automat la ora 00:00, dacă toţi oamenii se află în dormitor.
+	\item Atunci când nu mai există oameni în casă, uşa trebuie încuiată;
+	\item La un minut după de camera este liberă lumina din acea cameră este stinsă;
+	\item Dacă toţi oamenii se află în dormitor, uşa se încuie automat la ora 00:00.
 \end{itemize}
 
 Au fost create următoarele blocuri de intrare, pentru fiecare dispozitiv:
 \begin{itemize}
-	\item \textbf{Prezenţă Sufragerie}: indică dacă exista oameni in sufragerie. Are un singur canal, pe care trimite date de tip întreg despre numărul de oameni din cameră.
+	\item \textbf{Prezenţă Sufragerie}: indică dacă exista persoane in sufragerie. Are un singur canal pe care trimite date de tip întreg despre numărul de oameni din cameră.
 	\item \textbf{Prezenţă Dormitor}: senzorul din dormitor, analog cu Prezenţă Sufragerie.
 \end{itemize}
 \begin{figure}[H]
@@ -32,7 +32,7 @@ Au fost create următoarele blocuri de intrare, pentru fiecare dispozitiv:
 Următoarele diagrame au fost implementate:
 \begin{itemize}
 	\item \textbf{Închidere uşă noaptea}: Comandă închiderea uşii după ora 00:00 dacă toţi oamenii sunt în dormitor;
-	\item \textbf{Securizare casa}:  Comandă închiderea uşii când senzorii de prezenţă indică faptul că nu mai sunt oameni \ref{fig:securizareCasa};
+	\item \textbf{Securizare casa}:  Comandă închiderea uşii când senzorii de prezenţă indică faptul că nu mai sunt persoane \ref{fig:securizareCasa};
 	\item \textbf{Oprire lumina dormitor}:  Comandă oprirea luminii când nu mai e nimeni în dormitor;
 	\item \textbf{Oprire lumina sufragerie}: Analog, pentru sufragerie;
 \end{itemize}
@@ -44,7 +44,7 @@ Următoarele diagrame au fost implementate:
 	\caption{Diagramele implementate}
 	\label{fig:diagrams}
 \end{figure}
-
+Spre exemplu, în \cref{fig:securizareCasa} este prezentată diagrama care realizează încuierea casei când nu mai exista persoane în interior. Aceasta foloseşte canalele celor doi senzori de prezentă şi trimite valorile acestora către blocul "\textbf{Adder}", care adună toate intrările numerice. Dacă suma acestor intrări este 0, blocul "\textbf{MaiMareCaZero}" va returna valoarea fals, care este citită de dispozitivul de pe uşă ce acţionează mecanismul de închidere. În caz contrar, valoare returnată de blocul \textbf{MaiMareCaZero} este "adevarat", deci mecanismul nu va fi acţionat. Putem astfel vedea cât de uşor este să implementezi o logica complexă folosind diagrame bloc.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.1\textwidth, center]{utilizare/securizareCasa}

@@ -1,6 +1,8 @@
 \chapter{Arhitectura soluţiei}
 \label{chapter:arhitecture}
-
+\newlength{\bulletwidth}\settowidth{\bulletwidth}{$\bullet$}
+\newcommand{\mitem}{\setlength{\leftskip}{\leftmargin}\hspace*{-\labelsep}\hspace*{-\bulletwidth}$\bullet$\hspace*{\labelsep}}
+\newcommand{\mend}{\setlength{\leftskip}{0cm}}
 \section{Prezentare generală}
 Sistemul de achiziţie, procesare şi distribuţie a datelor a fost conceput ca o platformă de dezvoltare rapidă, bazat pe modele. Utilizatorul poate să îşi concentreze resursele asupra soluţiei finale, abstractizând detaliile implementării prin folosirea unor metode de programare vizuală, cu blocuri refolosibile în mai multe aplicaţii diferite. 
 Aplicaţia a fost construită pe baza unei arhitecturi modulare; modulele fiind cât mai puţin interconectate, permiţând modificări rapide şi testarea modulelor individual. Urmărind această gândire modulare s-au identificat 4 componente esenţiale: 
@@ -52,19 +54,25 @@ Separarea modulelor s-a făcut pe baza scopului acestora astfel:
 \subsection{Punctul de date}
 
 Punctul de date reprezintă elementul constructiv al sistemul reprezentând obiectul procesării, stocării şi distribuţiei. 
-Sistemul acceptă intern date în următoarele formate: 
+
+Sistemul acceptă intern date în următoarele formate, ilustrate şi în \cref{fig:dataType}: 
+
+\mitem \textbf{Long}: numere în intervalul $(-2^{63}, 2^{63} -1)$, fără virgulă; foloseşte \code{Long};
 \begin{wrapfigure}{r}{0.38\textwidth}
 	\centering
+		\captionsetup{justification=centering}
 	\includegraphics[width=0.38\textwidth]{dataType}
 	\caption{Tipurile de date acceptate în sistem}
+	\label{fig:dataType}
 \end{wrapfigure}
-\begin{itemize}
-	\item \textbf{Întreg}: numere în intervalul $(-2^{63}, 2^{63} -1)$, fără virgulă; foloseşte \textit{Long} pentru reprezentare internă;
-	\item \textbf{Real}: numere cu virgulă, având dublă precizie, reprezentate pe 64-bit conform standardului \autocite{4610935} IEEE 754;  foloseşte \textit{Double} pentru reprezentare internă;
-	\item \textbf{Sir de caractere}: Un şir de caractere fără lungime limită ce trebuie formatat conform \autocite{rfc4627}. 
-	\item \textbf{Obiect}: Un obiect Java serializat în text. Intern, asemănător cu tipul de date String. 
-\end{itemize}
+\mitem \textbf{Real}: numere cu virgulă, având dublă precizie, reprezentate pe 64-bit conform standardului \autocite{4610935} IEEE 754;  foloseşte \code{Double} pentru reprezentare internă;
 
+\mitem \textbf{Sir de caractere}: Un şir de caractere fără lungime limită ce trebuie formatat conform \autocite{rfc4627}. 
+
+\mitem \textbf{Obiect}: Un obiect Java serializat în text. Intern, asemănător cu tipul de date String. 
+\mend
+\\
+\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1.1\textwidth, center]{dataPoint}
@@ -74,7 +82,7 @@ Sistemul acceptă intern date în următoarele formate:
 \subsection{Canalul de date}
 
 Canalul de date este entitatea care asigură "curgerea" datelor prin sistem. Orice punct de date din sistem aparţine unui canal, acest lucru fiind realizat drept constrângere atât la nivelul aplicaţiei, cât şi la nivelul bazei de date.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=0.55\textwidth]{dataChannel}
 	\caption{Clasa DataChannel}
@@ -84,11 +92,11 @@ Canalul de date este şi mijlocul prin care utilizatorul interacţionează cu pu
 
 În plus, un canal de date poate avea şi un bloc de preprocesare ataşat. Acesta este executat de fiecare dată când date noi încearcă să fie introduse în canal, permiţând validarea şi transformarea datelor brute în date ce respectă tipul de date al canalului.  
 \subsection{Blocul de intrare}
-Blocurile de intrare modelează elemente reale în aplicaţie, grupând mai multe canale de date şi expunându-le pentru a permite introducerea datelor din exterior. Acestea descriu modul în care datele sunt legate de un element real. 
+Blocurile de intrare modelează elemente reale din aplicaţie, grupând mai multe canale de date şi expunându-le pentru a permite introducerea datelor din exterior. Acestea descriu modul în care datele sunt legate de un element real. 
 
-Spre exemplu, o sursă inteligentă si conectată de alimentare neîntreruptibilă din \cref{fig:ups} poate fi privită ca un bloc de intrare, unde fiecare senzor este reprezentat de un canal de date. Dispozitivul inteligent devine astfel conectat la platforma şi acesta poate să trimită date către aceasta. Pentru că datele pot avea perioade de eşantionare diferite, dispozitivul trimite date de la unul sau mai mulţi senzori odată, fiecare canal de date fiind tratat individual.
+[iulia]Spre exemplu, o sursă inteligentă si conectată in alimentare neîntreruptibilă din \cref{fig:ups} poate fi privită ca un bloc de intrare, unde fiecare senzor este reprezentat de un canal de date. [iulia] Dispozitivul inteligent devine astfel conectat la platforma şi poate trimite date către aceasta. Pentru că datele pot avea perioade de eşantionare diferite, dispozitivul trimite date de la unul sau mai mulţi senzori odată, fiecare canal de date fiind tratat individual.
 
-Un alt mod în care blocurile de intrare pot fi privite este ca obiecte, sau "Things" în cadrul Internetului Tuturor Lucrurilor (Internet of Things - IoT). Astfel, putem privi blocurile de intrare ca dispozitive ce monitorizează bătăile inimii sau activitatea celebrară, ca automobile cu reţele complexe de senzori, sau chiar aplicaţii de lucru ce generează date în timp real. Prin acest mijloc, dispozitive inteligente se pot conecta în platformă, fie trimiţând direct date, fie prin intermediul unui agent care se află pe dispozitiv, agent ce funcţionează ca un gateway, implementând protocoale proprietare de comunicaţie.
+Un alt mod în care blocurile de intrare pot fi privite este ca obiecte, sau "Things" în cadrul Internetului Tuturor Lucrurilor (Internet of Things - IoT). Astfel, putem privi blocurile de intrare ca dispozitive ce monitorizează bătăile inimii sau activitatea celebrară, ca automobile cu reţele complexe de senzori, sau chiar aplicaţii de lucru ce generează date în timp real. Prin acest mijloc, dispozitive inteligente se pot conecta în platformă, fie trimiţând direct date, fie prin intermediul unui agent care se află pe dispozitiv, agent ce funcţionează ca un \textit{gateway}, implementând protocoale de comunicaţie proprietare.
 
 \begin{figure}[H]
 	\centering
@@ -104,13 +112,13 @@ Un alt mod în care blocurile de intrare pot fi privite este ca obiecte, sau "Th
 
 \subsection{Blocul de procesare}
 
-Blocurile de procesare realizează operaţiile transformare a datelor. Din punct de vedere funcţional, acestea au la intrare ultimele date introduse de pe mai multe canale şi returnează un singur punct de date, comportându-se ca un element de tip "black-box"\autocite{functionBlocks}. Pentru implementare, utilizatorul foloseşte limbaje dinamice moderne, ca JavaScript sau Ruby, scriind cod direct în interfaţa web. Acest cod este rulat de către server. 
-Conceptul de blocuri de procesare reprezinta o implementare a blocurilor de operaţii definite în standardul  IEC61131-3 \autocite[Apendix C]{IEC61131-3} .
+Blocurile de procesare realizează operaţiile de transformare a datelor. Din punct de vedere funcţional, acestea au la intrare ultimele date introduse de pe mai multe canale şi returnează un singur punct de date, comportându-se ca un element de tip "black-box"\autocite{functionBlocks}. Pentru implementare, utilizatorul foloseşte limbaje dinamice, precum JavaScript sau Ruby, scriind cod direct în interfaţa web. Acest cod este rulat de către server. 
+Conceptul de blocuri de procesare reprezintă o implementare a blocurilor de operaţii definite în standardul  IEC61131-3 \autocite[Apendix C]{IEC61131-3} .
 
 Blocuri pre-implementate, existente în orice instantă a platformei, permit rezolvarea de probleme complexe cu cunoştinţe minime de programare.
-Un alt aspect important al blocurilor de procesare, este faptul ca sunt independente de sursa de date, ele oferind doar mijloace de prelucrare a unor date abstracte. Aceasta abstractizare permite refolosirea lor în mai multe proiecte. Spre exemplu, un bloc care face media tuturor intrărilor nu tine cont de originea datelor. 
+Un alt aspect important al blocurilor de procesare, este faptul ca sunt independente de sursa de date, ele oferind doar mijloace de prelucrare a unor date abstracte. Această abstractizare permite refolosirea lor în mai multe proiecte. Spre exemplu, un bloc care face media tuturor intrărilor nu ţine cont de originea datelor. 
 
-Blocurile \textbf{nu au memorie statica}. Ele pot folosi informaţii exterioare, cum ar fi timpul curent al zilei, sau alte informaţii din sistem, sau pot chiar accesa servicii web, însa ele nu au stare interioară. Astfel, se poate considera ca blocurile reprezintă un element combinaţional, şi nu unul secvenţial.
+Blocurile \textbf{nu au memorie statică}. Ele pot folosi informaţii exterioare, cum ar fi timpul curent al zilei sau alte informaţii din sistem, sau pot chiar accesa servicii web, însa ele nu au stare interioară. Astfel, se poate considera că blocurile reprezintă un element combinaţional şi nu unul secvenţial.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.55\textwidth]{exempluBlock}
@@ -123,16 +131,16 @@ Blocurile \textbf{nu au memorie statica}. Ele pot folosi informaţii exterioare,
 	\caption{Clasa \textbf{ProcessorBlock}}
 \end{figure}
 
-\subsection{Diagrama funcţie bloc(FBD)}
+\subsection{Diagrama funcţie bloc (FBD)}
 
-Diagramele funcţie bloc reprezintă o implementare a unuia din cele patru limbare de programare pentru automate programabile, specificate de standardul IEC 61131-3:2013 \autocite[128-140]{IEC61131-3}. FBD-ul este un limbaj de control al procesului, iar, în mod normal, toate blocurile de procesare dintr-o diagrama sunt executate.
-In cel mai simplu caz de utilizare, un FBD realizează următoarele operaţii:
+Diagramele funcţie bloc reprezintă o implementare a unuia din cele patru limbaje de programare pentru automate programabile, specificate de standardul IEC 61131-3:2013 \autocite[128-140]{IEC61131-3}. FBD reprezintă un limbaj de control al procesului, iar, în mod normal, toate blocurile de procesare dintr-o diagrama sunt executate.
+În cel mai simplu caz de utilizare, o FBD realizează următoarele operaţii:
 \begin{itemize}
 	\item Acceptă date de intrare de la unul sau mai multe canale;
 	\item Realizează o operaţie de transformare asupra acelor date folosind un bloc de procesare;
 	\item Salvează rezultatul pe un canal de ieşire.
 \end{itemize}
-Legăturile dintre blocuri sunt unidirecţionale. Un bloc de procesare poate trimite rezultatul său la unul sau mai multe blocuri, iar o intrare poate fi conectată la o singura ieşire. Transmiterea de date se face fără întârzieri. Diagramele sunt executate în ordinea definita de ordonarea topologica a nodurilor din graful ce defineşte diagrama \autocite[20-50]{IEC61499}. 
+Legăturile dintre blocuri sunt unidirecţionale. Un bloc de procesare poate trimite rezultatul său la unul sau mai multe blocuri, iar o intrare poate fi conectată la o singură ieşire. Transmiterea de date se face fără întârzieri. Diagramele sunt executate în ordinea definită de ordonarea topologică a nodurilor din graful ce defineşte diagrama \autocite[20-50]{IEC61499}. 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{functionalDiagram}
@@ -147,20 +155,20 @@ Legăturile dintre blocuri sunt unidirecţionale. Un bloc de procesare poate tri
 \end{figure}
 
 \section{Primirea datelor}
-Primirea datelor se face prin intermediul unei interfeţe de transfer a stării (REST). Mai multe formate acceptate pentru integrarea mai uşoară cu sisteme deja existente. Astfel, au fost implementate mai multe procesoare care primesc date atât într-un format nou, caracteristic aplicaţiei, cât şi în formate standard din industrie.
-In această versiune, modalităţi de trimitere a datelor au fost implementate:
+Primirea datelor se face prin intermediul unei interfeţe de transfer a stării (REST). Pentru integrarea mai uşoară cu sisteme deja existente sunt acceptate mai multe formate. Astfel, au fost implementate mai multe procesoare care primesc date atât într-un format nou, caracteristic aplicaţiei, cât şi în formate standard din industrie.
+În această versiune, modalităţi de trimitere a datelor au fost implementate:
 \begin{itemize}
-	\item Trimitere către un singur canal, un singur punct odată: pe baza serviciului\\ \textit{/api/put/{inputId}/{channelId}/{data}}. Acest serviciu adaugă un singur punct în baza de date, la momentul curent. Folosit pentru sisteme care trimit date rar, şi nu trebuie sa se tina cont de data locala de pe device-ul care a trimis punctul de date.
-	\item În formatul standard folosit de openTDSB, cu următoarele modificări care păstrează totuşi compatibilitatea: metricile reprezinta numele canalului, iar tag-urile sunt opţionale. Se acceptat atât formatul în care într-o cerere se afla un singur punct, cat şi formatul cu o lista de puncte. Canalele dintr-o cerere multidimensionala nu trebuie sa facă parte din acelaşi bloc de intrare. Acest mod de introducere a datelor este sugerat pentru sistemele care folosesc mai multe canale de date şi care trimit seturi de date mai mari printr-o singura cerere. Spre exemplu, un dispozitiv poate trimite date de pe mai multi senzori, şi poate stoca local mai multe măsurători pe acelaşi senzor pentru a trimite toate datele odată.
+	\item Trimitere către un singur canal, un singur punct odată, pe baza serviciului\\ \textit{/api/put/{inputId}/{channelId}/{data}}. Acest serviciu adaugă un singur punct în baza de date, la momentul curent şi este folosit pentru sisteme care trimit date rar şi nu trebuie să se ţină cont de data locala de pe device-ul care a trimis punctul de date.
+	\item În formatul standard folosit de openTDSB, cu următoarele modificări care păstrează totuşi compatibilitatea: metricile reprezintă numele canalului, iar tag-urile sunt opţionale. Se acceptă atât formatul în care într-o cerere se află un singur punct, cât şi formatul cu o listă de puncte. Canalele dintr-o cerere multidimensională nu trebuie să facă parte din acelaşi bloc de intrare. Acest mod de introducere a datelor este sugerat pentru sistemele care folosesc mai multe canale de date şi care trimit seturi de date mai mari printr-o singură cerere. Spre exemplu, un dispozitiv poate trimite date de pe mai multi senzori şi poate stoca local mai multe măsurători pe acelaşi senzor pentru a trimite toate datele odată.
 \end{itemize}
 Odată primite, noile puncte de date trec prin procesul descris în \cref{fig:intrareDate}:
 \begin{enumerate}
 	\item Se interoghează baza de date pentru detalii privind canalul ce tocmai a primit date.
-	\item Dacă un preprocesor exista pe canalul specificat, atunci el este încărcat.
-	\item Se executa preprocesorul cu punctul de date primit.
+	\item Dacă un preprocesor există pe canalul specificat, atunci el este încărcat.
+	\item Se execută preprocesorul cu punctul de date primit.
 	\item Se salvează rezultatul în baza de date.
-	\item Asincron, se lansează toate diagramele care trebuie sa se execute atunci când se primesc date noi pe acest canal.
-	\item Asincron, se informează ascultătorii ca canalul a primit date noi.
+	\item Asincron, se lansează toate diagramele care trebuie să se execute atunci când se primesc date noi pe acest canal.
+	\item Asincron, se informează "ascultătorii" de primirea unor date noi de către canal.
 \end{enumerate}
 \begin{landscape}
 	\begin{figure}

@@ -1,8 +1,5 @@
-\chapter{Implementarea Alegria}
+\chapter{Implementarea aplicaţiei de achiziţie, procesare şi distribuţie a datelor (Alegria)}
 \label{chapter:implemetare}
-\newlength{\bulletwidth}\settowidth{\bulletwidth}{$\bullet$}
-\newcommand{\mitem}{\setlength{\leftskip}{\leftmargin}\hspace*{-\labelsep}\hspace*{-\bulletwidth}$\bullet$\hspace*{\labelsep}}
-\newcommand{\mend}{\setlength{\leftskip}{0cm}}
 \section{Interfaţa Web}
 \begin{wrapfigure}{r}{0.35\textwidth}
 	\centering
@@ -10,27 +7,26 @@
 	\includegraphics[width=0.35\textwidth]{mvcPattern}
 	\caption{Colaborarea între componentele MVC}
 \end{wrapfigure}
-Alegria a fost implementată cu ajutorul platformei \textbf{Spring Boot} \autocite{SpringBoot}. Platforma a fost aleasă pentru stabilitatea ei excepţională, folosind Spring Framework care stă la baza unora din cele mai mari aplicaţii existente\autocite{springUseCase}, dar şi pentru uşurinţa prin care o aplicaţie poate fi compusă din elemente funcţionale, abstractizând peste nivelele de jos a programului, permiţând alocarea timpului pe logica aplicaţiei, şi nu pe implementarea platformei pe care aplicaţia sa ruleze. Un alt motiv pentru care platforma Spring a fost aleasa, este faptul ca suporta programarea orientată pe aspecte, şi injecţia dependinţelor, permiţând scrierea de cod curat şi uşor de testat.
+Aplicaţia de achiziţie, procesare şi distribuţie a datelor (Alegria) a fost implementată cu ajutorul platformei \textbf{Spring Boot} \autocite{SpringBoot}. Platforma a fost aleasă pentru stabilitatea ei excepţională, folosind Spring Framework care stă la baza unora din cele mai mari aplicaţii existente \autocite{springUseCase}, dar şi pentru uşurinţa prin care o aplicaţie poate fi compusă din elemente funcţionale, abstractizând peste nivelele de jos a programului, permiţând alocarea timpului pe logica aplicaţiei şi nu pe implementarea platformei pe care aplicaţia rulează. Un alt motiv pentru care a fost aleasă platforma Spring, este faptul că suportă programarea orientată pe aspecte şi injecţia dependinţelor, permiţând scrierea de cod curat şi uşor de testat.
 
 Cum aplicaţia este bazată pe arhitectura MVC (model-view-controller), aceasta a fost structurată în trei elemente separate: 
+\begin{itemize}
+\item  \textbf{Interfaţa vizuală}: Realizată în \textbf{HTML5}, folosind motorul de templating Thymeleaf pe server şi Bootstrap cu JQuery în client pentru afişarea paginilor. Această combinaţie permite realizarea de pagini de tip responsiv, compatibile cu toate dispozitivele existente pe piaţă indiferent de rezoluţie ( monitor cu display mare, tabletă, telefon mobil, etc).
 
-\mitem  \textbf{Interfaţa vizuală}: Realizată în \textbf{HTML5}, folosind motorul de templating Thymeleaf pe server şi Bootstrap cu JQuery în client pentru afişarea paginilor. Această combinaţie permite realizarea de pagini cu un aspect modern, responsiv, care funcţionează atât pe ecranul mare al calculatorului, cat şi pe display-ul mic al unui telefon.
+\item  \textbf{Modele}: O reprezentare a entităţilor din baza de date în sistemul de achiziţie, procesare şi distribuţie a datelor (Alegria).
 
-\mitem  \textbf{Modele}: O reprezentare a entităţilor din baza de date în sistemul Alegria.
-
-\mitem  \textbf{Controller-e}: Realizează legătura dintre partea vizuala a aplicaţiei şi entităţile din baza de date, asigurând atât metodele care "completează" template-urile cu date, cât şi implementarea interfeţei API care introduce şi extrage date.
-
-\mend
+\item  \textbf{Controller-e}: Realizează legătura dintre partea vizuală a aplicaţiei şi entităţile din baza de date, asigurând atât metodele care "completează" template-urile cu date, cât şi implementarea interfeţei API care introduce şi extrage date.
+\end{itemize}
 
 \subsection{Securitate}
-Securitatea este un aspect foarte important de luat în considerare, atât pentru accesul la date, cât şi la entităţi. Astfel, în implementare s-a folosit framework-ul \textbf{Spring Security} care uşurează management-ul securităţii, fiind puternic integrat şi cu restul platformei Spring.
+Securitatea este un aspect foarte important ce trebuie considerat, atât pentru accesul la date, cât şi la entităţi. Astfel, în implementare s-a folosit framework-ul \textbf{Spring Security} care uşurează management-ul securităţii, fiind puternic integrat şi cu restul platformei Spring.
 
 Pentru autentificare în vederea utilizării unei resurse protejate, utilizatorul va folosi unul din două mecanisme:
 \begin{itemize}
-	\item Autentificare securizată prin username şi parolă, aceste detalii fiind stocate în tabela \textit{application\_user}, parola fiind stocata abia după ce a fost trecuta printr-o funcţie criptografica de hashing. Această metodă este folosită pentru autentificarea utilizatorilor în interfaţa de management şi monitorizare. Odată ce procesul a reuşit, un token unic va fi generat, iar request-urile următoare vor fi verificate pe baza procesului descris mai jos.
-	\item Autentificare pe baza de token, folosita pentru securizarea API-ului, dar şi în cazul în care un user s-a autentificat deja cu username şi parolă. Fiecare request trebuie sa aibă un token, fie într-un cookie, fie ca parametru în url.
+	\item Autentificare securizată prin username şi parolă, aceste detalii fiind stocate în tabelă \textit{application\_user}, parola fiind stocată abia după ce a fost trecută printr-o funcţie criptografică de hashing. Această metodă este folosită pentru autentificarea utilizatorilor în interfaţa de management şi monitorizare. Odată ce procesul a reuşit, un token unic va fi generat, iar request-urile următoare vor fi verificate pe baza procesului descris mai jos.
+	\item Autentificare pe baza de token, folosită pentru securizarea API-ului, dar şi în cazul în care un utilizator s-a autentificat deja cu username şi parolă. Fiecare request trebuie sa aibă un token, fie într-un cookie, fie ca parametru în url.
 \end{itemize}
-Tot în scopuri de securitate, fiecare entitate care poate fi modificata menţine un istoric al tuturor modificărilor, împreuna cu utilizatorul cu care le-a efectuat, iar, pentru o dezvoltare ulterioara, accesul unui utilizator poate fi limitat doar la obiectele care au aceleaşi tag-uri ca şi utilizatorul.
+Tot în scopuri de securitate, fiecare entitate ce poate fi modificată menţine un istoric al tuturor modificărilor, împreună cu utilizatorul care le-a efectuat, iar, pentru o dezvoltare ulterioară, accesul unui utilizator poate fi limitat doar la obiectele care au aceleaşi tag-uri ca şi utilizatorul.
 \begin{landscape}
 	\begin{figure}
 		\centering
@@ -47,14 +43,14 @@ Tot în scopuri de securitate, fiecare entitate care poate fi modificata menţin
 	\centering
 	\includegraphics[width=\textwidth, center]{managedEntities}
 	\captionsetup{justification=centering}
-	\caption{Entităţile care sunt administrate de către utilizator şi implementează \code{ManagedEntity}}
+	\caption{Diagrama claselor care sunt administrate de către utilizator şi implementează \code{ManagedEntity}}
 	\label{fig:managedEntities}
 \end{figure}
-Toate entităţile care implementeaza \code{ManagedEntity} permit apoi operaţii de adăugare, modificare şi ştergere. Acest proces de administrare vizuala foloseşte următoarele resurse:
+Toate entităţile care implementează \code{ManagedEntity} permit apoi operaţii de adăugare, modificare şi ştergere. Acest proces de administrare vizuală foloseşte următoarele resurse:
 \begin{itemize}
-	\item Un \textbf{repository}, care extinde \code{JpaRepository} din framework-ul Spring Data. Acesta asigură operaţii de căutare, creare, citire, modificare şi ştergere a entităţilor. Un avantaj al folosirii  acestui repository, care implementează paradigma Data Acces Object (DAO) este ca interacţiunea cu baza de date se face într-un mod consistent şi sigur, incompatibilităţile de tip fiind detectate la compilare, şi nu la rulare. În Alegria, toate repository-urile folosite, împreuna cu implementările lor se afla în package-ul \code{ro.pub.acse.sapd.repository}.
-	\item O \textbf{vizualizare}, template Thyeleaf, care, într-o singură pagina HTML expune către utilizator toate operaţiile suportate de repository. Aceasta pagina este dinamica, ce foloseşte dialoguri modale încărcate prin AJAX pentru a edita entităţi, fără a fi necesar ca utilizatorul sa fie redirecţionat. Entităţile sunt afişate sub forma tabelară, dinamică, care permite sortarea şi filtrarea după diverse condiţii. Dialogul modal de editare este specific entităţii care este modificate. Vizualizările pentru întreaga lista se afla în \code{resources\textbackslash templates\textbackslash management} iar conţinutul dialogului modal se află în subdirectorul \code{fragments}.
-	\item Un \textbf{controller}, clasă cu adnotarea \code{@Controller}, care leagă repository-ul de vizualizare, dar şi specifică către Spring care sunt endpoint-urile (căile pe care acest controller le tratează) prin adnotarea \code{@RequestMapping}. Controllere-le pentru managementul entităţilor se află în \code{ro.pub.acse.sapd.controller.web.management}. Un exemplu de metode care sunt tratate într-un asemenea controller se găsesc în \cref{fig:managementInputs}.
+	\item Un \textbf{repository}, care extinde \code{JpaRepository} din framework-ul Spring Data. Acesta asigură operaţii de căutare, creare, citire, modificare şi ştergere a entităţilor. Un avantaj al folosirii  acestui repository, care implementează paradigma Data Acces Object (DAO) este că interacţiunea cu baza de date se face într-un mod consistent şi sigur, incompatibilităţile de tip fiind detectate la compilare, şi nu la rulare. În Alegria, toate repository-urile folosite, împreuna cu implementările lor, se află în package-ul \code{ro.pub.acse.sapd.repository}.
+	\item O \textbf{vizualizare}, template Thyeleaf, care, într-o singură pagină HTML expune către utilizator toate operaţiile suportate de repository. Această pagină este dinamică, ce foloseşte dialoguri modale încărcate prin AJAX pentru a edita entităţi, fără a fi necesar ca utilizatorul sa fie redirecţionat. Entităţile sunt afişate sub forma tabelară, dinamică, care permite sortarea şi filtrarea după diverse condiţii. Dialogul modal de editare este specific entităţii modificate. Vizualizările pentru întreaga listă se află în \code{resources\textbackslash templates\textbackslash management} iar conţinutul dialogului modal se află în subdirectorul \code{fragments}.
+	\item Un \textbf{controller}, clasă cu adnotarea \code{@Controller}, leagă repository-ul de vizualizare şi specifică către Spring care sunt endpoint-urile (căile pe care acest controller le tratează) prin adnotarea \code{@RequestMapping}. Controllere-le pentru managementul entităţilor se află în \code{ro.pub.acse.sapd.controller.web.management}. Un exemplu de metode care sunt tratate într-un asemenea controller se găsesc în \cref{fig:managementInputs}.
 \end{itemize}
 \begin{figure}[H]
 	\centering
@@ -75,7 +71,7 @@ Pe lângă elementele descrise mai sus, la management-ul blocurilor de intrare t
 Pentru selectarea blocului de preprocesare a fost folosit endpoint-ul din API de la adresa \code{/blocks/getBlocks} care returnează lista tuturor blocurilor de procesare în format JSON. Această listă este folosită pentru permite completarea automata a câmpului pentru blocul de preprocesare a datelor ale unui canal, folosind librăria JavaScript \textbf{Bootstrap 3 Typeahead} \autocite{typeahead}.
 
 \subsubsection{Managementul blocurilor de procesare}
-O particularitate a editării blocurilor de procesare este folosirea librăriei JavaScript \textbf{CodeMirror}\autocite{codemirror} pentru afişarea codului. Cuvintele cheie ale limbajului dat de tipul blocului fiind evidenţiate, acest lucru făcând dezvoltarea codului mult mai facila. Un alt avantaj al acestei librari este posibilitatea găsirii erorilor de sintaxa mult mai rapid, fără a testa blocul. Aceasta funcţionalitate este implementata cu ajutorul unei funcţii care se executa de fiecare dată când valoarea selectată în input-ul "Block Type" se modifică.
+O particularitate a editării blocurilor de procesare este folosirea librăriei JavaScript \textbf{CodeMirror} \autocite{codemirror} pentru afişarea codului. Cuvintele cheie ale limbajului dat de tipul blocului fiind evidenţiate, acest lucru făcând dezvoltarea codului mult mai uşoară. Un alt avantaj al acestei librări este posibilitatea găsirii erorilor de sintaxa mult mai rapid, fără a testa blocul. Aceasta funcţionalitate este implementata cu ajutorul unei funcţii care se execută de fiecare dată când se modifică valoarea selectată în input-ul "Block Type".
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.2\textwidth, center]{codemirrorExample}
@@ -83,23 +79,23 @@ O particularitate a editării blocurilor de procesare este folosirea librăriei 
 	\label{fig:codemirrorExample}
 \end{figure}
 \subsubsection{Managementul diagramelor}
-Pentru implementarea funcţiilor de design vizual al diagramelor funcţionale s-a ales librăria JavaScript \textbf{GoJS} \autocite{gojs}. Aceasta permite implementarea de diagrame interactive, fiind compatibilă cu toate browsere-le cat şi cu dispozitivele mobile moderne. Deoarece asigură suport pentru drag-and-drop, copiere şi lipire, undo şi redo dar şi multe alte funcţionalităţi, librăria reprezinta un punct foarte bun de plecare. Un alt avantaj al acestei librarii este ca suporta adăugarea de condiţii asupra diagramei chiar la construcţia acesteia. Din acest motiv, librăria a fost configurata sa nu permită decât legături de la o ieşire la o intrare.
+Pentru implementarea funcţiilor de design vizual al diagramelor funcţionale s-a ales librăria JavaScript \textbf{GoJS} \autocite{gojs}. Aceasta permite implementarea de diagrame interactive, fiind compatibilă cu toate browsere-le şi cu dispozitivele mobile moderne. Librăria reprezintă un punct foarte bun de plecare deoarece asigură suport atât pentru funcţionalităţi precum drag-and-drop, copiere şi lipire, undo şi redo, şi multe alte funcţionalităţi. Un alt avantaj al acestei librării este ca suportă adăugarea de condiţii asupra diagramei chiar la construcţia acesteia. Din acest motiv, librăria a fost configurată să nu permită decât legături de la o ieşire la o intrare.
 
-In vederea realizării acestor configurări fişierul JavaScript \code{diagram.js} a fost scris. Aici sunt configurate tipurile de blocuri:
+În vederea realizării acestor configurări a fost scris fişierul JavaScript \code{diagram.js}. Aici sunt configurate tipurile de blocuri:
 \begin{itemize}
-	\item \textbf{Canale de intrare}: acestea sunt configurate sa nu poată avea intrări, şi doar o singură ieşire. Atunci când un canal de intrare este selectat, utilizatorul poate sa îi atribuie un nume şi să selecteze care este canalul referfeniţat de acel bloc. Aceasta selecţie se face cu ajutorul unui input cu auto completare.
-	\item \textbf{Blocuri de procesare}: deoarece numărul de intrări este variabil, funcţia  \code{addPort} a fost implementată. Aceasta este apelata atunci când utilizatorul dă click pe opţiunea "Add input" din meniul contextual al blocului. Pentru operaţiunea de ştergere a portului, funcţia \code{removePort(port)} a fost implementată. Ordinea acestor porturi determină şi ordinea elementelor din lista cu care este apelat blocul de procesare. Atunci acesta este selectat, utilizatorul poate sa îi atribuie un nume şi sa selecteze care este blocul de procesare referfeniţat. Aceasta selecţie se face cu ajutorul unui input cu auto completare. Astfel, acelaşi bloc de procesare poate fi folosit de mai multe ori chiar şi în cadrul aceleiaşi diagrame. Pentru uşurinţă dezvoltării, linkuri către detaliile blocului de procesare sunt disponibile chiar în interiorul diagramei.
-	\item \textbf{Final}: bloc ce semnifica canalul de ieşire. Configurat cu un singur port de intrare, el nu poate fi legat decât la o singura ieşire.
-	\item \textbf{Comentariu}: nu se poate lega în diagrama şi nu ia parte la execuţia acesteia. 
+	\item \textbf{Canale de intrare}: acestea sunt configurate să nu poată avea intrări, ci doar o singură ieşire. Atunci când un canal de intrare este selectat, utilizatorul poate să îi atribuie un nume şi să selecteze care este canalul ce indică de acel bloc. Aceasta selecţie se face cu ajutorul unui input cu auto completare.
+	\item \textbf{Blocuri de procesare}: deoarece numărul de intrări este variabil a fost implementată funcţia \code{addPort}. Aceasta este apelată atunci când utilizatorul dă click pe opţiunea "Add input" din meniul contextual al blocului. Pentru operaţiunea de ştergere a portului a fost implementată funcţia \code{removePort(port)}. Ordinea acestor porturi determină şi ordinea elementelor din lista cu care este apelat blocul de procesare. Când un bloc este selectat utilizatorul poate să îi atribuie un nume şi să indice blocul de procesare la cere se referă. Această selecţie se face cu ajutorul unui input cu auto completare. Astfel, acelaşi bloc de procesare poate fi folosit de mai multe ori chiar şi în cadrul aceleiaşi diagrame. Pentru uşurinţă dezvoltării, linkuri către detaliile blocului de procesare sunt disponibile chiar în interiorul diagramei;
+	\item \textbf{Stop}: bloc ce semnifică canalul de ieşire. Configurat cu un singur port de intrare, el nu poate fi legat decât la o singura ieşire;
+	\item \textbf{Comentariu}: nu se poate lega în diagramă şi nu ia parte la execuţia acesteia. 
 \end{itemize}
-Toate aceste blocuri sunt adăugate şi într-o paleta pentru adăugare uşoară în diagrama. Deoarece blocul "Final" nu poate avea decât o singură instanţă, acesta nu este disponibil în paletă.
+Toate aceste blocuri sunt adăugate şi într-o paletă pentru adăugare uşoară în diagramă. Deoarece blocul "Stop" nu poate avea decât o singură instanţă, acesta nu este disponibil în paletă.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.2\textwidth, center]{diagramPalleteAndExample}
 	\caption{Paleta de blocuri şi exemplu de instanţe ale acestora}
 	\label{fig:diagramPalleteAndExample}
 \end{figure}
-Când utilizatorul salvează o diagramă, un model JSON a acesteia este generat, model ce este apoi salvat în baza de date. În acest model sunt salvate proprietăţile diagramei, urmate de o lista nodurilor, şi nu în ultimul rând legăturile dintre porturile nodurilor.
+Când utilizatorul salvează o diagramă, este generat un model JSON al acesteia, model ce este apoi salvat în baza de date. În acest model sunt salvate proprietăţile diagramei, urmate de lista nodurilor şi de legăturile dintre porturile nodurilor.
 
 \subsubsection{Administrare tag-uri}
 După cum s-a discutat în secţiunea despre securitate, fiecare entitate care este administrata de utilizator poate avea mai multe taguri. Acestea reprezintă o lista de cuvinte care specifică un concept, spre exemplu, toate entităţile care sunt folosite într-o diagrama pot avea acelaşi tag. Tagurile permit astfel gruparea entităţilor, fiind folosite în căutare.
@@ -109,19 +105,19 @@ După cum s-a discutat în secţiunea despre securitate, fiecare entitate care e
 	\caption{Editarea tag-urilor unui bloc de intrare}
 	\label{fig:tagsEdit}
 \end{figure}
-Pentru implementare, pe partea de server au fost creata clasa \code{ApplicationTag}, cu doua câmpuri: nume, şi Id. Toate instantele acestei clase sunt salvate în baza de date în tabela \code{application\_tag}, iar endpoint-ul \code{/tags/getTags} întoarce toate tag-urile din acea tabela. Acest serviciu API este folosit de librăria JavaScript Bootstrap Tags Input \autocite{tagsinput}, care, împreună cu librăria de autocompletare \autocite{typeahead}, permite utilizatorului să selecteze taguri deja existente. Atunci când utilizatorul introduce totuşi un tag care nu exista deja în baza de date, acesta este creat automat, fiind setat direct pe entitatea modificată. Fiecare \code{ManagedEntity} are un set de taguri, permiţând salvarea tagurilor în baza de date, într-un tabel separat, care implementeaza relaţia de Multi-la-Multi dintre entitate şi \code{ApplicationTag}.
+Pentru implementare, pe partea de server au fost creata clasa \code{ApplicationTag}, cu doua câmpuri: nume, şi Id. Toate instantele acestei clase sunt salvate în baza de date, în tabela \code{application\_tag}, iar endpoint-ul \code{/tags/getTags} întoarce toate tag-urile din acea tabelă. Acest serviciu API este folosit de librăria JavaScript Bootstrap Tags Input \autocite{tagsinput}, care, împreună cu librăria de autocompletare \autocite{typeahead}, permite utilizatorului să selecteze taguri deja existente. Atunci când utilizatorul introduce totuşi un tag care nu există deja în baza de date, acesta este creat automat, fiind setat direct pe entitatea modificată. Fiecare \code{ManagedEntity} are un set de taguri, permiţând salvarea tagurilor în baza de date, într-un tabel separat, care implementeaza relaţia de tip Many-to-Many dintre entitate şi \code{ApplicationTag}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth, center]{tags}
-	\caption{Relaţiile dintre tabela \code{tags} şi celelalte entităţi}
+	\caption{Relaţiile dintre tabelă \code{tags} şi celelalte entităţi}
 	\label{fig:tags}
 \end{figure}
 \subsection{Monitorizare}
-O chestiune de mare importanta este vizualizarea datelor ce au intrat sau au fost procesate de aplicaţie. În acest scop, a fost implementată vizualizarea datelor în timp real. Pentru extragerea informaţiilor de pe un canal se folosesc endpoint-urile din API de la \code{/api/fetch/{channelId}}, care întorc punctele de pe un canal dintr-un anumit interval de timp, in format JSON.
+O chestiune de mare importantă este vizualizarea datelor ce au intrat sau au fost procesate de aplicaţie. În acest scop, a fost implementată vizualizarea datelor în timp real. Pentru extragerea informaţiilor de pe un canal se folosesc endpoint-urile din API de la \code{/api/fetch/{channelId}}, care întorc punctele de pe un canal dintr-un anumit interval de timp, in format JSON.
 
-Deoarece datele procesate de aplicaţie sunt de mai multe tipuri, apare totuşi problema modului lor de afişare. În funcţie de datele întoarse prin API, se selectează unul din doua moduri; Pentru datele numerice, o reprezentare cu ajutorul unui grafic, folosind librăria dygraphs \autocite{dygraphs}, iar pentru datele care nu pot fi reprezentate numeric, acestea sunt afişate tabelar, ca şiruri de caractere.
+Deoarece datele procesate de aplicaţie sunt de mai multe tipuri, apare totuşi problema modului de afişare. În funcţie de datele întoarse prin API se selectează unul din două moduri. Pentru datele numerice se foloseşte o reprezentare grafică, folosind librăria dygraphs \autocite{dygraphs}, iar pentru datele care nu pot fi reprezentate numeric, se foloseşte sunt afişarea sub formă de tabel, ca şiruri de caractere.
 
-Pentru ambele moduri de reprezentare, utilizatorul are opţiunea sa obţină doar datele dintr-o anumita perioada de timp, sau chiar ultimele înregistrări pe acel canal. Acest mod de selecţie este ilustrat în \cref{fig:monitorDataFilter}
+Pentru ambele moduri de reprezentare, utilizatorul are opţiunea să obţină doar datele dintr-o anumită perioada de timp sau ultimele înregistrări pe acel canal. Acest mod de selecţie este ilustrat în \cref{fig:monitorDataFilter}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.2\textwidth, center]{monitorDataFilter}
@@ -129,15 +125,15 @@ Pentru ambele moduri de reprezentare, utilizatorul are opţiunea sa obţină doa
 	\label{fig:monitorDataFilter}
 \end{figure}
 \section{API-ul aplicaţiei}
-Pentru a permite interfaţarea aplicaţiei cu alte servicii, dar şi pentru a facilita dezvoltarea unor interfeţe web dinamice, aplicaţia dispune de un API REST. Acesta a fost configurat sa folosească date în format JSON.
+Pentru a permite interfaţarea aplicaţiei cu alte servicii, dar şi pentru a facilita dezvoltarea unor interfeţe web dinamice, aplicaţia dispune de un API REST. Acesta a fost configurat să folosească date în format JSON.
 
-În următoarea lista sunt descrise toate endpoint-urile API-ului, împreună cu detalii despre folosirea acestora. În afara de câteva excepţii menţionate, toate aceste servicii folosesc metoda HTTP GET.
+În următoarea lista sunt descrise toate endpoint-urile API-ului, împreună cu detalii despre folosirea acestora. În afară de câteva excepţii menţionate, toate aceste servicii folosesc metoda HTTP GET.
 \begin{itemize}
-	\item \code{/blocks/getBlocks}: întoarce toate blocurile de procesare din baza de date. 
-	\item \code{/blocks/getChannels}: întoarce toate canalele declarate în baza de date. Pentru fiecare canal returnat, se specifica de la ce bloc de intrare face parte, sau dacă este ieşirea unui diagrame funcţionale.
-	\item \code{/tags/getTags}: întoarce toate tagurile existente în aplicaţie.
-	\item \code{/api/put/\{inputId\}/\{channelId\}/\{data\}}: Adaugă punctul \code{data} pe canalul specificat prin \code{channelId}. Datele primite sunt în format \code{String}, care respecta standardul specificat în RFC3986 \autocite{rfc3986}. Foloseşte metoda PUT.
-	\item \code{/api/put/openTDSB}: Adaugă date în formatul openTDSB\autocite{openTSDB}. In corpul requestului trebuie să se afle un JSON care respecta standardul impus. Foloseşte metoda PUT.
+	\item \code{/blocks/getBlocks}: Întoarce toate blocurile de procesare din baza de date; 
+	\item \code{/blocks/getChannels}: Întoarce toate canalele declarate în baza de date. Pentru fiecare canal returnat se specifică blocul de intrare de care aparţine sau dacă este ieşirea unui diagrame funcţionale;
+	\item \code{/tags/getTags}: Întoarce toate tagurile existente în aplicaţie;
+	\item \code{/api/put/\{inputId\}/\{channelId\}/\{data\}}: adaugă punctul \code{data} pe canalul specificat prin \code{channelId}. Datele primite sunt în format \code{String} şi respectă standardul specificat în RFC3986 \autocite{rfc3986}. Foloseşte metoda PUT;
+	\item \code{/api/put/openTDSB}: Adaugă date în formatul openTDSB \autocite{openTSDB}. În corpul requestului trebuie să se afle un JSON care respectă standardul impus. Foloseşte metoda PUT.
 	\item \code{/api/fetch/\{channelId\}}: Întoarce date de pe canalul \code{channelId}. Următorii parametrii pot fi folosiţi pentru a extrage doar anumite date:
 	\begin{itemize}
 		\item \code{from}: Data de început a istoricului, în format ISO 8601.
@@ -152,52 +148,52 @@ Pentru a permite interfaţarea aplicaţiei cu alte servicii, dar şi pentru a fa
 Pe lângă aceste metode, aplicaţia mai pune la dispoziţie şi API-ul generat automat cu ajutorul Spring Data. Acesta permite adăugarea, modificarea, ştergerea şi căutarea entităţilor folosite în aplicaţie programatic.
 
 \section{Executarea unui bloc de procesare}
-Interacţiunea cu blocurile de procesare se face prin Spring Bean-ul \code{BlockExecutor}. Acesta este responsabil de iniţializarea tuturor implementărilor pentru interfaţa \code{GenericBlockExecutor}. Pentru fiecare implementare există un câmp asociat în enumeraţia \code{ProcessorBlockType}, câmp care este folosit ca proprietate în entitatea \code{ProcessorBlock}. Acest Bean poate fi apoi injectat folosind adnotarea \code{@Autowired} în toate clasele care doresc sa execute blocuri.
+Interacţiunea cu blocurile de procesare se face prin Spring Bean-ul \code{BlockExecutor}. Acesta este responsabil de iniţializarea implementărilor interfeţei \code{GenericBlockExecutor}. Pentru fiecare implementare există un câmp asociat în enumeraţia \code{ProcessorBlockType}, câmp care este folosit ca proprietate în entitatea \code{ProcessorBlock}. Acest Bean poate fi apoi injectat folosind adnotarea \code{@Autowired} în toate clasele care doresc să execute blocuri.
 
-Interfaţa \code{GenericBlockExecutor} are o singura metoda \code{processData} cu doi parametrii: unul de tip String, reprezentând codul funcţiei ce trebuie executat, şi unul de tip \code{List<DataPoint>} care conţine toate punctele ce pot fi folosite în blocul respectiv. Clasa \code{DataPoint} are doua câmpuri: valoare şi instanta de timp. Următoarele implementări a interfeţei \code{GenericBlockExecutor} exista în sistem:
+Interfaţa \code{GenericBlockExecutor} are o singură metodă \code{processData} cu doi parametrii: unul de tip String, reprezentând codul funcţiei ce trebuie executat şi unul de tip \code{List<DataPoint>} care conţine toate punctele ce pot fi folosite în blocul respectiv. Clasa \code{DataPoint} are două câmpuri: valoare şi instanţă de timp. În sistem există următoarele implementări a interfeţei \code{GenericBlockExecutor}:
 \begin{itemize}
-	\item \code{JavaBlockExecutor}: Acest executor reprezinta un caz special deoarece foloseşte clase locale, ce sa afla deja în classpath-ul JVM-ului pe care rulează aplicaţia. Aceste blocuri pot fi folosite pentru a extinde aplicaţia cu cod de înaltă performaţă, acţionând ca un mecanism de extensii ale aplicatei, permiţând interacţiunea cu alte sisteme. Aceste blocuri pot sa reprezinte doar o interfaţa pentru apelul unor librarii externe, făcând posibilă, spre exemplu, implementarea unui bloc care să execute scripturi MATLAB.
-	Acest bloc primeşte ca parametru doar numele canonic al clasei, iar, la execuţie încarcă clasa referentiată folosind funcţii din pachetul \code{java.lang.reflect}. Dacă clasa nu este găsită, sau o eroare are loc la execuţia clasei, o excepţie de tipul \code{BlockExecutionException} este generată.
+	\item \code{JavaBlockExecutor}: Acest executor reprezintă un caz special deoarece foloseşte clase locale ce se află deja în classpath-ul JVM-ului pe care rulează aplicaţia. Aceste blocuri pot fi folosite pentru a extinde aplicaţia cu cod de înaltă performaţă, acţionând ca un mecanism de extensii ale aplicaţiei, permiţând interacţiunea cu alte sisteme. Aceste blocuri pot să reprezinte doar o interfaţă pentru apelul unor librării externe făcând posibilă, spre exemplu, implementarea unui bloc care să execute scripturi MATLAB.
+	Acest bloc primeşte ca parametru doar numele canonic al clasei, iar la execuţie încarcă clasa la care face referinţă folosind funcţii din pachetul \code{java.lang.reflect}. Dacă clasa nu este găsită sau are loc o eroare la execuţia clasei, este generată o excepţie de tipul \code{BlockExecutionException}.
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=1.3\textwidth, center]{blockExecutors}
-		\caption{Clasele ce asigura executarea unei diagrame}
+		\caption{Diagrama claselor ce asigura executarea unei diagrame}
 		\label{fig:blockExecutors}
 	\end{figure}
-	\item \code{JavascriptBlockExecutor}: Executor ce poate rula cod JavaScript pe server. Aceste blocuri trebuie sa conţină o funcţie \code{parseInput} care ia ca parametru o lista de \code{DataPoint}. Pentru execuţia blocurilor de acest tip, standardul JSR 223 \autocite{JSR223} vine în ajutor prin abstractizarea funcţionalităţii interne necesare execuţiei de cod scris într-un limbaj dinamic, direct în maşina virtuala Java. In versiunea 8 a JVM-ului aceste funcţii sunt executate folosind runtime-ul de înaltă performantă Nashorn, care este accelerat de modificări recente, introduse în JSR 292  \autocite{JSR292}, ridicând performanta codului JavaScript la un nivel apropiat de funcţiile scrise în Java. Pentru versiunile precedente de JVM este folosit Mozilla Rhino. Dacă funcţia \code{parseInput} nu este găsită, sau o eroare are loc la execuţia script-ului, o excepţie de tipul \code{BlockExecutionException} este generată. Scriptul poate returna direct instante ale interfeţei \code{DataPoint}, sau alte obiecte care sunt apoi reprezentate ca un \code{StringDataPoint}.
+	\item \code{JavascriptBlockExecutor}: Executor ce poate rula cod JavaScript pe server. Aceste blocuri trebuie să conţină o funcţie \code{parseInput} care ia ca parametru o listă de \code{DataPoint}. Pentru execuţia blocurilor de acest tip, standardul JSR 223 \autocite{JSR223} vine în ajutor prin abstractizarea funcţionalităţii interne necesare execuţiei de cod scris într-un limbaj dinamic, direct în maşina virtuală Java. În versiunea 8 a JVM-ului aceste funcţii sunt executate folosind runtime-ul de înaltă performantă Nashorn care este accelerat de modificări recente, introduse în JSR 292  \autocite{JSR292}, ridicând performanţa codului JavaScript la un nivel apropiat de funcţiile scrise în Java. Pentru versiunile precedente de JVM este folosit Mozilla Rhino. Dacă funcţia \code{parseInput} nu este găsită sau la execuţia script-uluiare loc o eroare, este generată o excepţie de tipul \code{BlockExecutionException}. Scriptul poate returna direct instanţe ale interfeţei \code{DataPoint}, sau alte obiecte care sunt apoi reprezentate ca un \code{StringDataPoint}.
 	
 	\item \code{RubyBlockExecutor}: Executor ce rulează cod Ruby pe server. Din punct de vedere al implementării este similar cu \code{JavascriptBlockExecutor}, însă foloseşte librăria JRuby \autocite{jruby} .
 	
 \end{itemize}
 
 \section{Executarea unei diagrame funcţionale}
-\Cref{fig:intrareDate} prezintă şi modul în care o diagrama este executată. Diagramele sunt lansate în execuţie de fiecare dată când un canal folosit în ea primeşte informaţii noi. Dacă doua canale primesc date în acelaşi timp, atunci diagrama va fi lansată în execuţie tot de doua ori, pentru ambele puncte de date primite.
+\Cref{fig:intrareDate} prezintă şi modul în care o diagrama este executată. Diagramele sunt lansate în execuţie de fiecare dată când un canal folosit în ea primeşte informaţii noi. Dacă două canale primesc date în acelaşi timp atunci diagrama va fi lansată în execuţie de două ori, câte o dată pentru fiecare punct de date primite.
 
 \subsection{Ordinea execuţiei blocurilor}
-Problema ordinii execuţiei unei FBD este intens dezbătută atât în literatura, cat şi în aplicaţiile industriale. Cum standardul \textit{IEC61131-3} \autocite{IEC61131-3} nu propune o soluţie pentru ordinea de execuţie, producătorii industriali folosesc metode proprii, de la separarea blocurilor într-un tabel şi executarea de la stânga la dreapta, sus în jos \autocite[11]{TM241}, la definirea manuala a ordinii execuţiei \autocite[11]{Logix5000} sau folosind algoritmi care determina automat ordinea de execuţie \autocite[5]{GEFANUC}.
+Problema ordinii execuţiei unei FBD este intens dezbătută atât în literatură cât şi în aplicaţiile industriale. Cum standardul \textit{IEC61131-3} \autocite{IEC61131-3} nu propune o soluţie pentru ordinea de execuţie, producătorii industriali folosesc metode proprii, de la separarea blocurilor într-un tabel şi executarea de la stânga la dreapta, sus în jos \autocite[11]{TM241}, la definirea manuală a ordinii execuţiei \autocite[11]{Logix5000} sau folosind algoritmi care determina automat ordinea de execuţie \autocite[5]{GEFANUC}.
 
-În implementarea din Alegria s-a ales proiectarea unei metode automate pentru depistarea ordinii în care diagrama trebuie executata. Deoarece aceasta reprezinta un graf aciclic orientat, prima etapa a execuţiei este transformarea într-un graf reprezentat prin lista de adiacenta, unde fiecare bloc de intrare, bloc şi de procesare reprezinta un nod. Din aceasta reprezentare se omit blocurile de comentarii. Odată ce transformarea a fost efectuata cu succes, se încercă aplicarea unui algoritm de sortare topologică\autocite{toposort} a grafului obţinut. Aceasta implică găsirea unei ordini astfel încât, pentru orice arc orientat $uv$ de la  $u$ la $v$, $u$ este înaintea lui $v$. 
+În implementarea din aplicaţia Alegria s-a ales proiectarea unei metode automate pentru depistarea ordinii în care diagrama trebuie executată. Deoarece aceasta reprezintă un graf aciclic orientat, prima etapă a execuţiei este transformarea într-un graf reprezentat prin lista de adiacenţă, unde fiecare bloc reprezintă un nod. Din această reprezentare se omit blocurile de comentarii. Odată ce transformarea a fost efectuată cu succes se încercă aplicarea unui algoritm de sortare topologică \autocite{toposort} a grafului obţinut. Aceasta implică găsirea unei ordini astfel încât pentru orice arc orientat $uv$ de la  $u$ la $v$, $u$ este înaintea lui $v$. 
 Matematic problema poate fi formulata astfel:
 
 \begin{definition} 
 	O \textbf{ordine topologica}, notata $ord_D$, au unui graf orientat aciclic $D = (V,E)$ atribuie fiecărui nod o valoare astfel încât $ord_D(x) < ord_D(y)$ pentru orice arc $ x \rightarrow y \in E$.
 \end{definition}
-Mai multi algoritmi pentru efectuarea unei asemenea sortări exista în literatura \autocite{toposortArticle}, însa, deoarece grafurile în discuţie sunt statice, la care nu se adaugă sau şterg noduri, s-a ales un algoritm clasic, stabil din punct de vedere numeric descris de Kahn în 1962 \autocite{topoKahn}.
+În literatura există mai mulţi algoritmi pentru efectuarea unei asemenea sortări \autocite{toposortArticle}, însă, deoarece grafurile în discuţie sunt statice, adăugându-se sau ştergându-se noduri, s-a ales un algoritm clasic, stabil din punct de vedere numeric descris de Kahn în 1962 \autocite{topoKahn}.
 
 Simplificat, algoritmul implementat urmăreşte următorii paşi:
 \begin{enumerate}
-	\item Identifică toate nodurile spre care nu vine nici un arc. Valoarea acestor noduri va fi $0$. In cazul diagramelor, este vorba de toate canalele de intrare, şi de blocurile de procesare care nu au nici o intrare. Dacă aceste noduri nu există, înseamnă ca graful nu respecta condiţia de graf aciclic, deci acesta nu va putea fi executat.
-	\item Se alege unul din nodurile găsite mai sus.
-	\item Se şterge acest nod de valoare zero, împreună cu toate arcele care ies din el.
-	\item Se repeta paşii 1 şi 2 pana când nu mai exista noduri în graf.
+	\item Identifică toate nodurile spre care nu vine nici un arc. Valoarea acestor noduri va fi $0$. În cazul diagramelor, este vorba de toate canalele de intrare, şi de blocurile de procesare care nu au nici o intrare. Dacă aceste noduri nu există, înseamnă ca graful nu respecta condiţia de graf aciclic, deci acesta nu va putea fi executat;
+	\item Se alege unul din nodurile găsite mai sus;
+	\item Se şterge acest nod de valoare zero, împreună cu toate arcele care ies din el;
+	\item Se repetă paşii 1 şi 2 până când nu mai există noduri în graf.
 \end{enumerate}
 Algoritmul descris mai sus rulează în $\mathcal{O}(V + E)$. 
 
 \begin{algorithm}[H]
-	\KwData{Un graf orientat acliclic reprezentat prin lista de adiacenta}
+	\KwData{Un graf orientat acliclic reprezentat prin lista de adiacenţă}
 	\KwResult{Lista nodurilor ordonate topologic}
-	$L \gets$ Lista goala ce va conţine nodurile sortate \;
-	$S \gets$ Lista tuturor nodurilor spre care nu exista nici un arc \;
+	$L \gets$ Lista goală ce va conţine nodurile sortate \;
+	$S \gets$ Lista tuturor nodurilor spre care nu există nici un arc \;
 	\While{ $S$ conţine elemente }{ 
 		şterge nodul $n$ din $S$ \;
 		introdu nodul $n$ în $L$ \;
@@ -209,7 +205,7 @@ Algoritmul descris mai sus rulează în $\mathcal{O}(V + E)$.
 	} 
 	
 }
-\eIf{mai exista arce în graf}
+\eIf{mai există arce în graf}
 {\Return{\textbf{Eroare:} Graful are cel puţin un ciclu}}{
 	{\Return{$L$ (graful sortat topologic)}}
 }
@@ -217,14 +213,7 @@ Algoritmul descris mai sus rulează în $\mathcal{O}(V + E)$.
 \caption{Algoritmul lui Khan pentru sortare topologică}
 \end{algorithm}
 
-Astfel, pentru diagrama din \cref{fig:exempluDiagrama}, o posibila ordine de execuţie este descrisă în \cref{fig:executionOrder}.
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=\textwidth]{diagramExecutionOrder}
-	\caption{Ordinea execuţiei pentru diagrama din \cref{fig:exempluDiagrama}}
-	\label{fig:executionOrder}
-\end{figure}
-După cum se observă în \cref{alg:khan}, acesta poate detecta grafuri care conţin cicluri şi nu pot fi rezolvate. Aceasta verificare permite detectarea erorilor, precum cea din diagrama \ref{fig:badDiagram}, şi informarea utilizatorului pentru ca acesta să rezolve problema.
+Astfel, pentru diagrama din \cref{fig:exempluDiagrama}, o posibilă ordine de execuţie este descrisă în \cref{fig:executionOrder}.
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.95\textwidth]{badDiagram}
@@ -232,7 +221,16 @@ După cum se observă în \cref{alg:khan}, acesta poate detecta grafuri care con
 	\label{fig:badDiagram}
 \end{figure}
 
-Deşi ciclurile la nivel de diagrama nu sunt permise, cele la nivel de canal sunt. Astfel, ieşirea unei diagrame poate fi setata ca intrare pentru aceeaşi diagrama, permiţând executarea în bucla, deoarece odată ce o diagrama se termina de executat şi salvează rezultatul pe canal, aceasta se relansează în execuţie cu noi informaţii. Cu astfel de bucle se poate implementa diagrame ce interacţionează intre ele. Un alt aspect pozitiv al faptului ca intrările unor diagrame pot fi ieşirile unor alte diagrame este faptul ca procese foarte complexe pot fi descompuse în părţile componente prin simpla înlănţuire a diagramelor.
+După cum se observă în \cref{alg:khan}, acesta poate detecta grafuri care conţin cicluri şi nu pot fi rezolvate. Această verificare permite detectarea erorilor, precum cea din diagrama \ref{fig:badDiagram} şi informarea utilizatorului pentru ca acesta să rezolve problema.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{diagramExecutionOrder}
+	\caption{Ordinea execuţiei pentru diagrama din \cref{fig:exempluDiagrama}}
+	\label{fig:executionOrder}
+\end{figure}
+
+Deşi ciclurile la nivel de diagrama nu sunt permise, cele la nivel de canal sunt. Astfel, ieşirea unei diagrame poate fi setată ca intrare pentru aceeaşi diagramă, permiţând executarea în buclă, deoarece odată ce o diagrama se termină de executat şi salvează rezultatul pe canal, aceasta se relansează în execuţie cu noi informaţii. Cu astfel de bucle se pot implementa diagrame ce interacţionează între ele. Un alt aspect pozitiv al faptului ca ieşirile unor diagrame pot reprezenta intrări pentru alte diagrame este faptul că procese foarte complexe pot fi descompuse în părţile componente prin simpla înlănţuire a diagramelor.
 
 \subsection{Generarea rezultatului}
 Odată ce ordinea de execuţie a fost calculată, procesul de calcul al rezultatului este destul de simplu, fiind ilustrat în \cref{alg:executeDiagram}:
@@ -263,7 +261,7 @@ Odată ce ordinea de execuţie a fost calculată, procesul de calcul al rezultat
 	\caption{Execuţia unei diagrame FBD}
 \end{algorithm}
 
-\subsection{Implementarea în Aplicaţie}
+\subsection{Implementarea execuţiei}
 Pentru execuţia diagramelor este folosit Spring Bean-ul \code{DiagramExecutor}. Acesta este responsabil atât de parsarea unei diagrame cât şi de execuţia şi extragerea rezultatelor. Acest Bean poate fi apoi injectat folosind adnotarea \code{@Autowired} în toate clasele care doresc sa execute diagrame.
 
 Parsarea este realizata cu ajutorul interfeţei \code{DiagramParser}, aceasta permiţând transformarea diagramei într-un graf reprezentat prin listă de adiacenţă. O implementarea a acestei interfeţe este clasa \code{GoJsDiagramParser} care parsează JSON-ul generat de librăria GoJS. Aceasta parsare se face cu ajutorul librăriei Jackson, folosind modelul de date din figura \cref{fig:gojsdiagramModel}. Dacă parsarea nu este realizata cu succes, atunci o excepţie de tipul \code{DiagramParseException} este aruncată.
@@ -272,7 +270,7 @@ Dacă se doreşte înlocuirea librăriei de front-end pentru realizarea diagrame
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth, center]{diagramExecuteClasses}
-	\caption{Clasele implicate în executarea unei diagrame}
+	\caption{Diagrama claselor implicate în executarea unei diagrame}
 	\label{fig:diagramExecuteClasses}
 \end{figure}
 Odată ce parsarea a fost efectuată, execuţia blocului poate continua: folosind clasa \code{TopologicalSort}, o implementare a \cref{alg:khan} cu tipuri generice şi expresii lambda, ordinea de execuţie este calculată. Apoi, \cref{alg:executeDiagram} este executat, si, cu ajutorul bean-ului \code{BlockExecutor} blocurile din diagrama sunt executate. Rezultatul final al metodei \code{execute} este un \code{DataPoint} care va fi salvat în baza de date, pe canalul de ieşire a diagramei.
@@ -281,7 +279,7 @@ O alta chestiune importantă este determinarea momentelor când o diagrama trebu
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=1.2\textwidth, center]{gojsdiagramModel}
-	\caption{Modelul de date pentru diagramele GoJS}
+	\caption{Diagrama claselor ce reprezintă modelul de date pentru diagramele GoJS}
 	\label{fig:gojsdiagramModel}
 \end{figure}
 \section{Serviciul de date}
@@ -304,7 +302,7 @@ Petru stocarea entităţilor au fost investigate mai multe opţiuni de baze de d
 	\begin{figure}
 		\centering
 		\includegraphics[width=1.8\textwidth]{dbDiagram}
-		\caption{Modelul entităţilor din baza de date}
+		\caption{Modelul relaţional al entităţilor din baza de date}
 		\label{fig:dbDiagram}
 	\end{figure}
 \end{landscape}
@@ -317,5 +315,3 @@ Pentru generarea schemei bazei de date s-a folosit ORM-ul implicit din Spring Da
 	\caption{Transformarea claselor Java în relaţii din baza de date prin intermediul unui ORM}
 	\label{fig:ORMtransform}
 \end{figure}
-
-

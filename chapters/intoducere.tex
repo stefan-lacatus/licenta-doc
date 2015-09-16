@@ -10,13 +10,22 @@ Problema poate fi generalizată în următoarele trei concepte:
 \end{itemize}
 
 Problema aceasta se întâlneşte atât în mediile industriale, cât şi în aplicaţiile de mici dimensiuni. 
-În ultimii 5 ani, a avut loc o noua revoluţie industrială. Paradigma industrială clasică este înlocuită la o paradigmă nouă în care procesele de fabricaţie sunt digitalizate complet, toate componentele procesului de fabricaţie fiind conectate central \autocite{deloitteReport}. 
+În ultimii 5 ani, a avut loc o noua revoluţie industrială \autocite{ptc} . Paradigma industrială clasică este înlocuită la o paradigmă nouă în care procesele de fabricaţie sunt digitalizate complet, toate componentele procesului de fabricaţie fiind conectate central \autocite{deloitteReport}. 
 Tradiţional, această interconectare se face prin intermediul automatelor programabile, conectate la un sistem de tip SCADA. Această structură are totuşi dezavantajul ca este statică şi nu valorifică în totalitate existenţa unor senzori inteligenţi, iar fiecare automat trebuie programat individual pentru un singur scop, datele achiziţionate fiind greu de centralizat.
 
 Pe de altă parte, pentru aplicaţiile din mediul privat, sistemele care centralizează şi procesează datele sunt fie foarte scumpe, restricţionând utilizatorul la senzori şi dispozitive produse de un singur producător, fie sunt greu de configurat, necesitând multe echipamente separate de procesare. Spre exemplu, o automatizare a casei, folosind echipamente Siemens, costa aproximativ 15000\euro, dispozitivele de procesare reprezentând jumătate din acest preţ. Pe de alta parte, pachete software open-source, precum OpenHAB \autocite{openHab} rezolvă un subset al problemei, uşurând integrarea echipamentelor compatibile, însă nu sunt destul de generice, având aplicabilitate într-un singur domeniu.
 
-Soluţia propusă doreşte să răspundă la problema aplicaţilor de dimensiuni mici şi mijlocii, în special din mediul privat care, propunând o alternativă la achiziţionarea de PLC-uri sau alte dispozitive complicate pentru stocarea şi procesarea datelor. Aceasta unifică achiziţia, procesarea, stocarea şi distribuţia datelor într-o singura aplicaţie ce poate fi instalată atât local, cat şi pe o instanță cloud, permiţând accesul din orice locaţie. Un alt avantaj al unificării tuturor acestor funcţionalităţi într-o singură aplicaţie este prezentarea unui interfeţe standard pentru implementarea proceselor de procesare. Astfel, se evită unul din cele mai mari avantaje ale automatelor programabile, la care, fiecare producător are propriile standarde de implementare a aplicaţiilor.
+Soluţia propusă doreşte să răspundă la problema aplicaţilor de dimensiuni mici şi mijlocii, în special din mediul privat care, propunând o alternativă la achiziţionarea de PLC-uri sau alte dispozitive complicate pentru stocarea şi procesarea datelor. Aceasta unifică achiziţia, procesarea, stocarea şi distribuţia datelor într-o singura aplicaţie ce poate fi instalată atât local, cat şi pe o instanţă cloud, permiţând accesul din orice locaţie. Un alt avantaj al unificării tuturor acestor funcţionalităţi într-o singură aplicaţie este prezentarea unui interfeţe standard pentru implementarea proceselor de procesare. Astfel, se evită unul din cele mai mari avantaje ale automatelor programabile, la care, fiecare producător are propriile standarde de implementare a aplicaţiilor.
 
 Una din cerinţele iniţiale pe care aplicaţia a urmărit să le respecte este aspectul generic a datelor. Deşi majoritatea aplicaţiilor vor fi în procesarea numerică, acesta este doar unul din mai multe tipuri de date. Acest aspect generic permite folosirea soluţiei ca o magistrală de procesare a datelor în medii de lucru, care transformă date complexe produse de un sistem în date ce pot fi acceptate de alt sistem, menţinând un istoric în tot acest timp.
+
+Următoarele funcţionalităţi sunt incuse în aplicaţie:
+\begin{itemize}
+	\item Colectarea datelor de la dispozitive şi servicii.
+	\item Implementarea funcţiilor de procesare folosind limbaje de nivel înalt.
+	\item Realizarea procesării folosind diagrame funcţie bloc.
+	\item Posibilitatea de integrare în alte sisteme.
+	\item Monitorizarea în timp real.
+\end{itemize}
 
 Lucrare urmăreşte prezentarea implementării acestei soluţii. \Cref{chapter:arhitecture} prezintă arhitectura generală, descriind entităţile folosite şi modul în care acestea interacţionează. \Cref{chapter:interfata} ilustrează interfaţa vizuală pe care aplicaţia o pune la dispoziţia utilizatorului, iar \cref{chapter:implemetare} descrie în detaliu implementarea. Ultimele două capitole, \ref{chapter:studiuCaz} şi \ref{chapter:concluzii}, prezintă un caz de utilizare al aplicaţiei respectiv câteva concluzii şi dezvoltării ce ar putea îmbunătăţi soluţia propusă.

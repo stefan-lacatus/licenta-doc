@@ -1,17 +1,19 @@
 [0] Config.pm:324> INFO - This is Biber 2.1
 [0] Config.pm:327> INFO - Logfile is 'main.blg'
-[55] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
-[55] Biber.pm:333> INFO - Reading 'main.bcf'
-[288] Biber.pm:645> INFO - Found 29 citekeys in bib section 0
-[309] Biber.pm:2977> INFO - Processing section 0
-[330] Biber.pm:3115> INFO - Looking for bibtex format file 'chapters/references.bib' for section 0
-[376] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
-[413] bibtex.pm:895> INFO - Found BibTeX data source 'chapters/references.bib'
-[455] Utils.pm:146> WARN - BibTeX subsystem: D:\Users\placatus\AppData\Local\Temp\M6pAAGZeK8\references.bib_10860.utf8, line 33, warning: undefined macro "61131-3"
-[457] Utils.pm:146> WARN - The field 'number' in entry 'IEC61131-3' cannot be null, deleting it
-[752] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'variable = shifted' with 'variable = non-ignorable'
-[753] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[753] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ro-RO'
-[836] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[900] bbl.pm:596> INFO - Output to main.bbl
-[903] Biber.pm:106> INFO - WARNINGS: 2
+[56] biber-MSWIN:273> INFO - === %a %b %e, %Y, %H:%M:%S
+[56] Biber.pm:333> INFO - Reading 'main.bcf'
+[301] Biber.pm:645> INFO - Found 30 citekeys in bib section 0
+[324] Biber.pm:2977> INFO - Processing section 0
+[345] Biber.pm:3115> INFO - Looking for bibtex format file 'chapters/references.bib' for section 0
+[393] bibtex.pm:1021> INFO - Decoding LaTeX character macros into UTF-8
+[433] bibtex.pm:895> INFO - Found BibTeX data source 'chapters/references.bib'
+[479] Utils.pm:146> WARN - BibTeX subsystem: D:\Users\placatus\AppData\Local\Temp\ch6s4g8HTH\references.bib_15856.utf8, line 33, warning: undefined macro "61131-3"
+[479] Utils.pm:146> WARN - BibTeX subsystem: warning: comma(s) at end of name (removing)
+[479] Utils.pm:146> WARN - BibTeX subsystem: author, warning: comma(s) at end of name (removing)
+[481] Utils.pm:146> WARN - The field 'number' in entry 'IEC61131-3' cannot be null, deleting it
+[793] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'variable = shifted' with 'variable = non-ignorable'
+[793] UCollate.pm:66> INFO - Overriding locale 'ro-RO' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[793] Biber.pm:2854> INFO - Sorting list 'nty' of type 'entry' with scheme 'nty' and locale 'ro-RO'
+[881] bbl.pm:505> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[954] bbl.pm:596> INFO - Output to main.bbl
+[957] Biber.pm:106> INFO - WARNINGS: 4
